@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}Search Results{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-10">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h4 class="mb-0">Search Results</h4>
+                <a href="/" class="btn btn-outline-primary">
+                    <i class="fas fa-arrow-left"></i> New Search
+                </a>
+            </div>
+            <div class="card-body">
+                {% if logs %}
+                    <div class="mb-3">
+                        <p class="text-muted">Found {{ logs|length }} log entries for ID: {{ search_id }}</p>
+                    </div>
+                    <div class="log-entries">
+                        {% for log in logs %}
+                            <div class="log-entry">
+                                <div class="timestamp">{{ log.timestamp }}</div>
+                                <div class="service-badge">{{ log.service }}</div>
+                                <div class="log-message">{{ log.message }}</div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle"></i> No logs found for ID: {{ search_id }}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 
