@@ -2,6 +2,7 @@ from fastapi import FastAPI, Request, Form
 from fastapi.templating import Jinja2Templates
 from fastapi.responses import HTMLResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
+from fastapi_mcp import FastApiMCP
 import logging
 from datetime import datetime, timedelta
 import os
@@ -29,7 +30,11 @@ if missing_vars:
     raise ValueError(f"Missing required environment variables: {', '.join(missing_vars)}")
 
 # Initialize FastAPI app
-app = FastAPI(title="LokiLens", description="Log Search and Analysis Tool")
+app = FastAPI(
+    title="LokiLens",
+    description="Log Search and Analysis Tool",
+    version="1.0.0"
+)
 
 # Mount static files
 app.mount("/static", StaticFiles(directory="static"), name="static")
@@ -61,6 +66,16 @@ class SearchResponse(BaseModel):
     time_ranges: List[str]
     results: dict[str, List[LogEntry]]
     total_results: int
+
+# Initialize MCP
+mcp = FastApiMCP(
+    app,
+    name="LokiLens MCP",
+    description="Model Context Protocol interface for LokiLens log search",
+    base_url="http://localhost:8000",
+    describe_all_responses=True,
+    describe_full_response_schema=True
+)
 
 def parse_timestamp(timestamp_str: str) -> datetime:
     """Parse timestamp in various formats to datetime object."""
@@ -121,7 +136,7 @@ async def search_logs_html(
             }
         )
 
-@app.post("/api/search", response_model=SearchResponse)
+@app.post("/api/search", response_model=SearchResponse, operation_id="search_logs")
 async def search_logs_api(request: SearchRequest):
     """Search logs for the given ID across multiple time ranges and return JSON results."""
     try:
@@ -219,6 +234,9 @@ async def search_logs(search_id: str, time_ranges: list) -> dict:
         "results": grouped_results,
         "total_results": len(all_results)
     }
+
+# Mount the MCP server
+mcp.mount()
 
 if __name__ == "__main__":
     import uvicorn
