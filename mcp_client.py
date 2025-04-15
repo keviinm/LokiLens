@@ -36,6 +36,10 @@ class LogSearchClient:
         self.default_model = default_model
         self.timeout = timeout
         
+        # Initialize conversation history and search results
+        self.conversation_history = []
+        self.last_search_results = None
+        
         if not self.openai_api_key:
             raise ValueError("OpenAI API key is required")
         
@@ -54,6 +58,30 @@ class LogSearchClient:
         except Exception as e:
             logger.error(f"Failed to initialize MCP tools: {str(e)}")
             raise
+    
+    def _is_follow_up_question(self, query: str) -> bool:
+        """Determine if the query is a follow-up question."""
+        follow_up_indicators = [
+            "what about",
+            "tell me more",
+            "explain",
+            "how about",
+            "what else",
+            "and",
+            "also",
+            "more",
+            "further",
+            "additionally",
+            "what happened",
+            "show me",
+            "find",
+            "search",
+            "look up",
+            "check"
+        ]
+        
+        query_lower = query.lower()
+        return any(indicator in query_lower for indicator in follow_up_indicators)
     
     def _parse_date(self, date_str: str) -> str:
         """Parse various date formats and convert to YYYYMMDDHHMM format."""
@@ -259,7 +287,13 @@ class LogSearchClient:
         model = model or self.default_model
         logger.info(f"Processing chat query: {query}")
         
-        # Prepare the system message
+        # Add user query to conversation history
+        self.conversation_history.append({"role": "user", "content": query})
+        
+        # Check if this is a follow-up question
+        is_follow_up = self._is_follow_up_question(query)
+        
+        # Prepare the system message with conversation context
         system_message = """You are a helpful assistant that can search and analyze logs.
         You have access to a log search tool that can find logs by ID and time ranges.
         
@@ -271,14 +305,9 @@ class LogSearchClient:
         5. If the user provides a date without time, automatically use 00:00
         6. If the user provides a month without day, use the first day of the month
         7. If the user provides a relative date (e.g., "yesterday", "today"), convert it to absolute date
-        8. Support various date formats:
-           - YYYY-MM-DD HH:MM
-           - YYYY/MM/DD HH:MM
-           - DD-MM-YYYY HH:MM
-           - DD/MM/YYYY HH:MM
-           - Month Day, Year HH:MM (e.g., February 2, 2025 23:29)
-           - Month Year (e.g., February 2025)
-           - Relative dates (today, yesterday)
+        8. For follow-up questions, use the context from previous searches when possible
+        9. If a follow-up question requires new information, make a new search request
+        10. Always maintain conversation context and refer to previous information when relevant
         
         When users ask questions about logs, you should:
         1. Extract relevant search IDs and time ranges from their questions
@@ -287,19 +316,8 @@ class LogSearchClient:
         4. For months without day, automatically use the first day
         5. Only use the search_logs tool when you have ALL required parameters
         6. Analyze the results and provide a natural language response
-        
-        Example interactions:
-        User: "What happened with transaction 12345 on February 2?"
-        Assistant: "I'll search for logs related to transaction 12345 on February 2, 2025 at 00:00..."
-        
-        User: "Show me logs from February"
-        Assistant: "I'll need a transaction ID to search for. Could you please provide one?"
-        
-        User: "Find logs for ID 12345 at 2025-02-02 23:29"
-        Assistant: "I'll search for logs related to transaction 12345 at the specified time..."
-        
-        User: "What happened with transaction 12345 yesterday?"
-        Assistant: "I'll search for logs related to transaction 12345 from yesterday at 00:00..."
+        7. For follow-up questions, use previous search results when appropriate
+        8. If a follow-up requires new information, make a new search request
         """
         
         # Prepare the tools description
@@ -335,7 +353,7 @@ class LogSearchClient:
                 model=model,
                 messages=[
                     {"role": "system", "content": system_message},
-                    {"role": "user", "content": query}
+                    *self.conversation_history[-5:],  # Include last 5 messages for context
                 ],
                 tools=tools,
                 tool_choice="auto"
@@ -373,6 +391,9 @@ class LogSearchClient:
                         )
                         logger.info(f"Search results: {json.dumps(search_results, indent=2)}")
                         
+                        # Store search results for follow-up questions
+                        self.last_search_results = search_results
+                        
                         # Ensure search_results is a dictionary
                         if isinstance(search_results, str):
                             search_results = {"results": search_results}
@@ -382,7 +403,7 @@ class LogSearchClient:
                         # Prepare messages for the second OpenAI call
                         messages = [
                             {"role": "system", "content": system_message},
-                            {"role": "user", "content": query},
+                            *self.conversation_history[-5:],
                             {"role": "assistant", "content": message.content, "tool_calls": [tool_call]},
                             {"role": "tool", "content": json.dumps(search_results), "tool_call_id": tool_call.id}
                         ]
@@ -392,12 +413,22 @@ class LogSearchClient:
                             model=model,
                             messages=messages
                         )
-                        return response.choices[0].message.content
+                        answer = response.choices[0].message.content
+                        
+                        # Add assistant's response to conversation history
+                        self.conversation_history.append({"role": "assistant", "content": answer})
+                        
+                        return answer
                     except Exception as e:
                         logger.error(f"Failed to process search results: {str(e)}")
                         return f"I found the logs but encountered an error while processing them: {str(e)}"
             
-            return message.content if message.content else "I couldn't process your request. Please try again."
+            answer = message.content if message.content else "I couldn't process your request. Please try again."
+            
+            # Add assistant's response to conversation history
+            self.conversation_history.append({"role": "assistant", "content": answer})
+            
+            return answer
             
         except Exception as e:
             logger.error(f"Failed to chat with logs: {str(e)}")

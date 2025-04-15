@@ -28,4 +28,4 @@ RUN mkdir -p /app/logs && chmod 777 /app/logs
 EXPOSE 8000
 
 # Command to run the application
-CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000", "--reload"] 
+CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000", "--reload", "--reload-dir", "/app/app.py", "--reload-dir", "/app/s3_operations.py", "--reload-dir", "/app/log_processor.py"] 
