@@ -1,0 +1,39 @@
+2025-05-13 13:01:28,205 - s3 - INFO - [s3_operations.py:14] - Initializing S3 operations
+2025-05-13 13:01:28,205 - botocore.hooks - DEBUG - [hooks.py:482] - Changing event name from creating-client-class.iot-data to creating-client-class.iot-data-plane
+2025-05-13 13:01:28,206 - botocore.hooks - DEBUG - [hooks.py:482] - Changing event name from before-call.apigateway to before-call.api-gateway
+2025-05-13 13:01:28,206 - botocore.hooks - DEBUG - [hooks.py:482] - Changing event name from request-created.machinelearning.Predict to request-created.machine-learning.Predict
+2025-05-13 13:01:28,207 - botocore.hooks - DEBUG - [hooks.py:482] - Changing event name from before-parameter-build.autoscaling.CreateLaunchConfiguration to before-parameter-build.auto-scaling.CreateLaunchConfiguration
+2025-05-13 13:01:28,207 - botocore.hooks - DEBUG - [hooks.py:482] - Changing event name from before-parameter-build.route53 to before-parameter-build.route-53
+2025-05-13 13:01:28,207 - botocore.hooks - DEBUG - [hooks.py:482] - Changing event name from request-created.cloudsearchdomain.Search to request-created.cloudsearch-domain.Search
+2025-05-13 13:01:28,207 - botocore.hooks - DEBUG - [hooks.py:482] - Changing event name from docs.*.autoscaling.CreateLaunchConfiguration.complete-section to docs.*.auto-scaling.CreateLaunchConfiguration.complete-section
+2025-05-13 13:01:28,208 - botocore.hooks - DEBUG - [hooks.py:482] - Changing event name from before-parameter-build.logs.CreateExportTask to before-parameter-build.cloudwatch-logs.CreateExportTask
+2025-05-13 13:01:28,208 - botocore.hooks - DEBUG - [hooks.py:482] - Changing event name from docs.*.logs.CreateExportTask.complete-section to docs.*.cloudwatch-logs.CreateExportTask.complete-section
+2025-05-13 13:01:28,208 - botocore.hooks - DEBUG - [hooks.py:482] - Changing event name from before-parameter-build.cloudsearchdomain.Search to before-parameter-build.cloudsearch-domain.Search
+2025-05-13 13:01:28,208 - botocore.hooks - DEBUG - [hooks.py:482] - Changing event name from docs.*.cloudsearchdomain.Search.complete-section to docs.*.cloudsearch-domain.Search.complete-section
+2025-05-13 13:01:28,211 - botocore.loaders - DEBUG - [loaders.py:181] - Loading JSON file: /Users/emmanuel.kipngetich/Downloads/2025/AI/LokiLens/venv/lib/python3.13/site-packages/botocore/data/endpoints.json
+2025-05-13 13:01:28,221 - botocore.loaders - DEBUG - [loaders.py:181] - Loading JSON file: /Users/emmanuel.kipngetich/Downloads/2025/AI/LokiLens/venv/lib/python3.13/site-packages/botocore/data/sdk-default-configuration.json
+2025-05-13 13:01:28,221 - botocore.hooks - DEBUG - [hooks.py:238] - Event choose-service-name: calling handler <function handle_service_name_alias at 0x108073420>
+2025-05-13 13:01:28,234 - botocore.loaders - DEBUG - [loaders.py:181] - Loading JSON file: /Users/emmanuel.kipngetich/Downloads/2025/AI/LokiLens/venv/lib/python3.13/site-packages/botocore/data/s3/2006-03-01/service-2.json.gz
+2025-05-13 13:01:28,241 - botocore.loaders - DEBUG - [loaders.py:181] - Loading JSON file: /Users/emmanuel.kipngetich/Downloads/2025/AI/LokiLens/venv/lib/python3.13/site-packages/botocore/data/s3/2006-03-01/service-2.sdk-extras.json
+2025-05-13 13:01:28,252 - botocore.loaders - DEBUG - [loaders.py:181] - Loading JSON file: /Users/emmanuel.kipngetich/Downloads/2025/AI/LokiLens/venv/lib/python3.13/site-packages/botocore/data/s3/2006-03-01/endpoint-rule-set-1.json.gz
+2025-05-13 13:01:28,261 - botocore.loaders - DEBUG - [loaders.py:181] - Loading JSON file: /Users/emmanuel.kipngetich/Downloads/2025/AI/LokiLens/venv/lib/python3.13/site-packages/botocore/data/partitions.json
+2025-05-13 13:01:28,262 - botocore.hooks - DEBUG - [hooks.py:238] - Event creating-client-class.s3: calling handler <function add_generate_presigned_post at 0x107ff9800>
+2025-05-13 13:01:28,262 - botocore.hooks - DEBUG - [hooks.py:238] - Event creating-client-class.s3: calling handler <function lazy_call.<locals>._handler at 0x108110f40>
+2025-05-13 13:01:28,276 - botocore.hooks - DEBUG - [hooks.py:238] - Event creating-client-class.s3: calling handler <function add_generate_presigned_url at 0x107ff9580>
+2025-05-13 13:01:28,276 - botocore.configprovider - DEBUG - [configprovider.py:989] - Looking for endpoint for s3 via: environment_service
+2025-05-13 13:01:28,276 - botocore.configprovider - DEBUG - [configprovider.py:989] - Looking for endpoint for s3 via: environment_global
+2025-05-13 13:01:28,276 - botocore.configprovider - DEBUG - [configprovider.py:989] - Looking for endpoint for s3 via: config_service
+2025-05-13 13:01:28,276 - botocore.configprovider - DEBUG - [configprovider.py:989] - Looking for endpoint for s3 via: config_global
+2025-05-13 13:01:28,276 - botocore.configprovider - DEBUG - [configprovider.py:1005] - No configured endpoint found.
+2025-05-13 13:01:28,283 - botocore.endpoint - DEBUG - [endpoint.py:414] - Setting s3 timeout as (60, 60)
+2025-05-13 13:01:28,289 - botocore.loaders - DEBUG - [loaders.py:181] - Loading JSON file: /Users/emmanuel.kipngetich/Downloads/2025/AI/LokiLens/venv/lib/python3.13/site-packages/botocore/data/_retry.json
+2025-05-13 13:01:28,290 - botocore.client - DEBUG - [client.py:290] - Registering retry handlers for service: s3
+2025-05-13 13:01:28,290 - botocore.utils - DEBUG - [utils.py:1718] - Registering S3 region redirector handler
+2025-05-13 13:01:28,290 - botocore.utils - DEBUG - [utils.py:1666] - Registering S3Express Identity Resolver
+2025-05-13 13:01:28,290 - s3 - INFO - [s3_operations.py:24] - S3 client initialized successfully
+2025-05-13 13:01:28,293 - mcp.server.lowlevel.server - DEBUG - [server.py:146] - Initializing server 'LokiLens MCP'
+2025-05-13 13:01:28,293 - mcp.server.lowlevel.server - DEBUG - [server.py:385] - Registering handler for ListToolsRequest
+2025-05-13 13:01:28,293 - fastapi_mcp.server - DEBUG - [server.py:34] - Registering handler for CallToolRequest
+2025-05-13 13:01:28,297 - mcp.server.sse - DEBUG - [sse.py:84] - SseServerTransport initialized with endpoint: /mcp/messages/
+2025-05-13 13:01:28,298 - fastapi_mcp.server - INFO - [server.py:285] - No auth config provided, skipping auth setup
+2025-05-13 13:01:28,298 - fastapi_mcp.server - INFO - [server.py:359] - MCP server listening at /mcp

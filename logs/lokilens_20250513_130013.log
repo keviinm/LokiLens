@@ -1,0 +1,243 @@
+2025-05-13 13:00:13,981 - slack - INFO - [slack_app.py:27] - Loading environment variables...
+2025-05-13 13:00:13,982 - slack - INFO - [slack_app.py:29] - Environment variables loaded successfully
+2025-05-13 13:00:13,982 - slack - INFO - [slack_app.py:32] - Initializing Slack app...
+2025-05-13 13:00:14,030 - slack_bolt.App - DEBUG - [base_client.py:265] - Sending a request - url: https://slack.com/api/auth.test, query_params: {}, body_params: {}, files: {}, json_body: None, headers: {'Content-Type': 'application/x-www-form-urlencoded', 'Authorization': '(redacted)', 'User-Agent': 'Bolt/1.23.0 Python/3.13.3 slackclient/3.35.0 Darwin/24.4.0'}
+2025-05-13 13:00:14,788 - slack_bolt.App - DEBUG - [base_client.py:556] - Received the following response - status: 200, headers: {'date': 'Tue, 13 May 2025 10:00:14 GMT', 'server': 'Apache', 'vary': 'Accept-Encoding', 'x-slack-req-id': '8bf492ae3927e179ca6aecd6b8316235', 'x-content-type-options': 'nosniff', 'x-xss-protection': '0', 'pragma': 'no-cache', 'cache-control': 'private, no-cache, no-store, must-revalidate', 'expires': 'Sat, 26 Jul 1997 05:00:00 GMT', 'content-type': 'application/json; charset=utf-8', 'x-oauth-scopes': 'commands,chat:write,channels:history,groups:history,im:history', 'access-control-expose-headers': 'x-slack-req-id, retry-after', 'access-control-allow-headers': 'slack-route, x-slack-version-ts, x-b3-traceid, x-b3-spanid, x-b3-parentspanid, x-b3-sampled, x-b3-flags', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'referrer-policy': 'no-referrer', 'x-slack-unique-id': 'aCMYLlo1QvjYnwsMEyAHaAAAAC0', 'x-slack-backend': 'r', 'access-control-allow-origin': '*', 'content-length': '189', 'via': '1.1 slack-prod.tinyspeck.com, envoy-www-iad-axmvgsfc,envoy-edge-bom-bbezyelq', 'x-envoy-attempt-count': '1', 'x-envoy-upstream-service-time': '217', 'x-backend': 'main_normal main_canary_with_overflow main_control_with_overflow', 'x-server': 'slack-www-hhvm-main-iad-rgjj', 'x-slack-shared-secret-outcome': 'no-match', 'x-edge-backend': 'envoy-www', 'x-slack-edge-shared-secret-outcome': 'no-match', 'connection': 'close'}, body: {"ok":true,"url":"https:\/\/cell-logs.slack.com\/","team":"Cell-logs","user":"lokilens","team_id":"T08RN80K1N3","user_id":"U08SQGNTJU8","bot_id":"B08SQGNSACQ","is_enterprise_install":false}
+2025-05-13 13:00:14,788 - slack - INFO - [slack_app.py:34] - Slack app initialized successfully
+2025-05-13 13:00:14,788 - slack - INFO - [slack_app.py:37] - Initializing S3 operations...
+2025-05-13 13:00:14,789 - s3 - INFO - [s3_operations.py:14] - Initializing S3 operations
+2025-05-13 13:00:14,789 - botocore.hooks - DEBUG - [hooks.py:482] - Changing event name from creating-client-class.iot-data to creating-client-class.iot-data-plane
+2025-05-13 13:00:14,790 - botocore.hooks - DEBUG - [hooks.py:482] - Changing event name from before-call.apigateway to before-call.api-gateway
+2025-05-13 13:00:14,790 - botocore.hooks - DEBUG - [hooks.py:482] - Changing event name from request-created.machinelearning.Predict to request-created.machine-learning.Predict
+2025-05-13 13:00:14,791 - botocore.hooks - DEBUG - [hooks.py:482] - Changing event name from before-parameter-build.autoscaling.CreateLaunchConfiguration to before-parameter-build.auto-scaling.CreateLaunchConfiguration
+2025-05-13 13:00:14,791 - botocore.hooks - DEBUG - [hooks.py:482] - Changing event name from before-parameter-build.route53 to before-parameter-build.route-53
+2025-05-13 13:00:14,791 - botocore.hooks - DEBUG - [hooks.py:482] - Changing event name from request-created.cloudsearchdomain.Search to request-created.cloudsearch-domain.Search
+2025-05-13 13:00:14,791 - botocore.hooks - DEBUG - [hooks.py:482] - Changing event name from docs.*.autoscaling.CreateLaunchConfiguration.complete-section to docs.*.auto-scaling.CreateLaunchConfiguration.complete-section
+2025-05-13 13:00:14,792 - botocore.hooks - DEBUG - [hooks.py:482] - Changing event name from before-parameter-build.logs.CreateExportTask to before-parameter-build.cloudwatch-logs.CreateExportTask
+2025-05-13 13:00:14,792 - botocore.hooks - DEBUG - [hooks.py:482] - Changing event name from docs.*.logs.CreateExportTask.complete-section to docs.*.cloudwatch-logs.CreateExportTask.complete-section
+2025-05-13 13:00:14,792 - botocore.hooks - DEBUG - [hooks.py:482] - Changing event name from before-parameter-build.cloudsearchdomain.Search to before-parameter-build.cloudsearch-domain.Search
+2025-05-13 13:00:14,792 - botocore.hooks - DEBUG - [hooks.py:482] - Changing event name from docs.*.cloudsearchdomain.Search.complete-section to docs.*.cloudsearch-domain.Search.complete-section
+2025-05-13 13:00:14,795 - botocore.loaders - DEBUG - [loaders.py:181] - Loading JSON file: /Users/emmanuel.kipngetich/Downloads/2025/AI/LokiLens/venv/lib/python3.13/site-packages/botocore/data/endpoints.json
+2025-05-13 13:00:14,805 - botocore.loaders - DEBUG - [loaders.py:181] - Loading JSON file: /Users/emmanuel.kipngetich/Downloads/2025/AI/LokiLens/venv/lib/python3.13/site-packages/botocore/data/sdk-default-configuration.json
+2025-05-13 13:00:14,806 - botocore.hooks - DEBUG - [hooks.py:238] - Event choose-service-name: calling handler <function handle_service_name_alias at 0x103f61620>
+2025-05-13 13:00:14,818 - botocore.loaders - DEBUG - [loaders.py:181] - Loading JSON file: /Users/emmanuel.kipngetich/Downloads/2025/AI/LokiLens/venv/lib/python3.13/site-packages/botocore/data/s3/2006-03-01/service-2.json.gz
+2025-05-13 13:00:14,823 - botocore.loaders - DEBUG - [loaders.py:181] - Loading JSON file: /Users/emmanuel.kipngetich/Downloads/2025/AI/LokiLens/venv/lib/python3.13/site-packages/botocore/data/s3/2006-03-01/service-2.sdk-extras.json
+2025-05-13 13:00:14,834 - botocore.loaders - DEBUG - [loaders.py:181] - Loading JSON file: /Users/emmanuel.kipngetich/Downloads/2025/AI/LokiLens/venv/lib/python3.13/site-packages/botocore/data/s3/2006-03-01/endpoint-rule-set-1.json.gz
+2025-05-13 13:00:14,836 - botocore.loaders - DEBUG - [loaders.py:181] - Loading JSON file: /Users/emmanuel.kipngetich/Downloads/2025/AI/LokiLens/venv/lib/python3.13/site-packages/botocore/data/partitions.json
+2025-05-13 13:00:14,838 - botocore.hooks - DEBUG - [hooks.py:238] - Event creating-client-class.s3: calling handler <function add_generate_presigned_post at 0x103e876a0>
+2025-05-13 13:00:14,838 - botocore.hooks - DEBUG - [hooks.py:238] - Event creating-client-class.s3: calling handler <function lazy_call.<locals>._handler at 0x105a863e0>
+2025-05-13 13:00:14,859 - botocore.hooks - DEBUG - [hooks.py:238] - Event creating-client-class.s3: calling handler <function add_generate_presigned_url at 0x103e87420>
+2025-05-13 13:00:14,859 - botocore.configprovider - DEBUG - [configprovider.py:989] - Looking for endpoint for s3 via: environment_service
+2025-05-13 13:00:14,859 - botocore.configprovider - DEBUG - [configprovider.py:989] - Looking for endpoint for s3 via: environment_global
+2025-05-13 13:00:14,859 - botocore.configprovider - DEBUG - [configprovider.py:989] - Looking for endpoint for s3 via: config_service
+2025-05-13 13:00:14,859 - botocore.configprovider - DEBUG - [configprovider.py:989] - Looking for endpoint for s3 via: config_global
+2025-05-13 13:00:14,859 - botocore.configprovider - DEBUG - [configprovider.py:1005] - No configured endpoint found.
+2025-05-13 13:00:14,860 - botocore.endpoint - DEBUG - [endpoint.py:414] - Setting s3 timeout as (60, 60)
+2025-05-13 13:00:14,862 - botocore.loaders - DEBUG - [loaders.py:181] - Loading JSON file: /Users/emmanuel.kipngetich/Downloads/2025/AI/LokiLens/venv/lib/python3.13/site-packages/botocore/data/_retry.json
+2025-05-13 13:00:14,862 - botocore.client - DEBUG - [client.py:290] - Registering retry handlers for service: s3
+2025-05-13 13:00:14,862 - botocore.utils - DEBUG - [utils.py:1718] - Registering S3 region redirector handler
+2025-05-13 13:00:14,862 - botocore.utils - DEBUG - [utils.py:1666] - Registering S3Express Identity Resolver
+2025-05-13 13:00:14,862 - s3 - INFO - [s3_operations.py:24] - S3 client initialized successfully
+2025-05-13 13:00:14,862 - slack - INFO - [slack_app.py:42] - S3 operations initialized successfully
+2025-05-13 13:00:14,862 - slack - INFO - [slack_app.py:45] - Initializing OpenAI client...
+2025-05-13 13:00:14,884 - slack - INFO - [slack_app.py:47] - OpenAI client initialized successfully
+2025-05-13 13:00:14,884 - slack - INFO - [slack_app.py:50] - Initializing MCP client...
+2025-05-13 13:00:14,885 - mcp - INFO - [mcp_client.py:30] - Initializing LogSearchClient...
+2025-05-13 13:00:14,885 - mcp - INFO - [mcp_client.py:45] - Initializing OpenAI client...
+2025-05-13 13:00:14,891 - mcp - INFO - [mcp_client.py:48] - OpenAI client initialized successfully
+2025-05-13 13:00:14,891 - mcp - INFO - [mcp_client.py:53] - Initializing MCP tools...
+2025-05-13 13:00:14,891 - mcp - INFO - [mcp_client.py:165] - Connecting to MCP server at http://localhost:8000/mcp
+2025-05-13 13:00:14,893 - urllib3.connectionpool - DEBUG - [connectionpool.py:241] - Starting new HTTP connection (1): localhost:8000
+2025-05-13 13:00:14,931 - urllib3.connectionpool - DEBUG - [connectionpool.py:544] - http://localhost:8000 "GET /mcp HTTP/1.1" 200 None
+2025-05-13 13:00:14,931 - mcp - INFO - [mcp_client.py:180] - Response status code: 200
+2025-05-13 13:00:14,931 - mcp - INFO - [mcp_client.py:181] - Response headers: {'date': 'Tue, 13 May 2025 10:00:14 GMT', 'server': 'uvicorn', 'cache-control': 'no-store', 'connection': 'keep-alive', 'x-accel-buffering': 'no', 'content-type': 'text/event-stream; charset=utf-8', 'Transfer-Encoding': 'chunked'}
+2025-05-13 13:00:14,931 - sseclient - DEBUG - [__init__.py:32] - Initialized SSE client from event source <Response [200]>
+2025-05-13 13:00:14,933 - sseclient - DEBUG - [__init__.py:108] - Dispatching endpoint event, 58 bytes...
+2025-05-13 13:00:14,933 - mcp - INFO - [mcp_client.py:190] - Received session ID: 094da9b94c0c4c0eab5f65311f4bf241
+2025-05-13 13:00:14,933 - mcp - INFO - [mcp_client.py:56] - MCP tools initialized successfully
+2025-05-13 13:00:14,933 - slack - INFO - [slack_app.py:52] - MCP client initialized successfully
+2025-05-13 13:00:14,934 - __main__ - INFO - [main.py:34] - 🚀 Starting Loki Lens application...
+2025-05-13 13:00:14,936 - s3 - INFO - [s3_operations.py:14] - Initializing S3 operations
+2025-05-13 13:00:14,936 - botocore.hooks - DEBUG - [hooks.py:238] - Event choose-service-name: calling handler <function handle_service_name_alias at 0x103f61620>
+2025-05-13 13:00:14,937 - botocore.hooks - DEBUG - [hooks.py:238] - Event creating-client-class.s3: calling handler <function add_generate_presigned_post at 0x103e876a0>
+2025-05-13 13:00:14,937 - botocore.hooks - DEBUG - [hooks.py:238] - Event creating-client-class.s3: calling handler <function lazy_call.<locals>._handler at 0x105a863e0>
+2025-05-13 13:00:14,937 - botocore.hooks - DEBUG - [hooks.py:238] - Event creating-client-class.s3: calling handler <function add_generate_presigned_url at 0x103e87420>
+2025-05-13 13:00:14,937 - botocore.configprovider - DEBUG - [configprovider.py:989] - Looking for endpoint for s3 via: environment_service
+2025-05-13 13:00:14,937 - botocore.configprovider - DEBUG - [configprovider.py:989] - Looking for endpoint for s3 via: environment_global
+2025-05-13 13:00:14,937 - botocore.configprovider - DEBUG - [configprovider.py:989] - Looking for endpoint for s3 via: config_service
+2025-05-13 13:00:14,937 - botocore.configprovider - DEBUG - [configprovider.py:989] - Looking for endpoint for s3 via: config_global
+2025-05-13 13:00:14,937 - botocore.configprovider - DEBUG - [configprovider.py:1005] - No configured endpoint found.
+2025-05-13 13:00:14,938 - botocore.endpoint - DEBUG - [endpoint.py:414] - Setting s3 timeout as (60, 60)
+2025-05-13 13:00:14,939 - botocore.client - DEBUG - [client.py:290] - Registering retry handlers for service: s3
+2025-05-13 13:00:14,939 - botocore.utils - DEBUG - [utils.py:1718] - Registering S3 region redirector handler
+2025-05-13 13:00:14,940 - botocore.utils - DEBUG - [utils.py:1666] - Registering S3Express Identity Resolver
+2025-05-13 13:00:14,940 - s3 - INFO - [s3_operations.py:24] - S3 client initialized successfully
+2025-05-13 13:00:14,940 - slack - INFO - [slack_app.py:455] - Starting Slack app in Socket Mode
+2025-05-13 13:00:14,940 - __main__ - INFO - [main.py:53] - ✅ Slack integration started
+2025-05-13 13:00:14,958 - slack_bolt.App - DEBUG - [base_client.py:265] - Sending a request - url: https://slack.com/api/apps.connections.open, query_params: {}, body_params: {}, files: {}, json_body: None, headers: {'Content-Type': 'application/x-www-form-urlencoded', 'Authorization': '(redacted)', 'User-Agent': 'Bolt/1.23.0 Python/3.13.3 slackclient/3.35.0 Darwin/24.4.0'}
+2025-05-13 13:00:15,723 - slack_bolt.App - DEBUG - [base_client.py:556] - Received the following response - status: 200, headers: {'date': 'Tue, 13 May 2025 10:00:15 GMT', 'server': 'Apache', 'vary': 'Accept-Encoding', 'x-slack-req-id': 'cb40eb481797d7825525e90decfe02c3', 'x-content-type-options': 'nosniff', 'x-xss-protection': '0', 'x-robots-tag': 'noindex,nofollow', 'pragma': 'no-cache', 'cache-control': 'private, no-cache, no-store, must-revalidate', 'expires': 'Sat, 26 Jul 1997 05:00:00 GMT', 'content-type': 'application/json; charset=utf-8', 'x-accepted-oauth-scopes': 'connections:write', 'x-oauth-scopes': 'connections:write,authorizations:read', 'access-control-expose-headers': 'x-slack-req-id, retry-after', 'access-control-allow-headers': 'slack-route, x-slack-version-ts, x-b3-traceid, x-b3-spanid, x-b3-parentspanid, x-b3-sampled, x-b3-flags', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'referrer-policy': 'no-referrer', 'x-slack-unique-id': 'aCMYL6d_-Rk6YhiAujShJgAAABA', 'x-slack-backend': 'r', 'access-control-allow-origin': '*', 'content-length': '173', 'via': '1.1 slack-prod.tinyspeck.com, envoy-www-iad-nidpszaj,envoy-edge-bom-nvumfkzx', 'x-envoy-attempt-count': '1', 'x-envoy-upstream-service-time': '207', 'x-backend': 'main_normal main_canary_with_overflow main_control_with_overflow', 'x-server': 'slack-www-hhvm-main-iad-tkic', 'x-slack-shared-secret-outcome': 'no-match', 'x-edge-backend': 'envoy-www', 'x-slack-edge-shared-secret-outcome': 'no-match', 'connection': 'close'}, body: {"ok":true,"url":"wss:\/\/wss-primary.slack.com\/link\/?ticket=edf5a266-a03c-45ef-a7f0-1d4a25abb5d0&app_id=80ecbf266142da985b68b05f1ff313c100b9cdf30b305f7e8a16dce5f531ab94"}
+2025-05-13 13:00:16,687 - slack_bolt.App - INFO - [client.py:193] - A new session has been established (session id: c68694cd-f957-49fb-8d9b-da1097b0fcdb)
+2025-05-13 13:00:16,693 - slack_bolt.App - INFO - [base_handler.py:51] - ⚡️ Bolt app is running!
+2025-05-13 13:00:16,707 - slack_bolt.App - INFO - [client.py:266] - Starting to receive messages from a new connection (session id: c68694cd-f957-49fb-8d9b-da1097b0fcdb)
+2025-05-13 13:00:16,713 - slack_bolt.App - DEBUG - [client.py:236] - on_message invoked: (message: {"type":"hello","num_connections":1,"debug_info":{"host":"applink-9","build_number":117,"approximate_connection_time":18060},"connection_info":{"app_id":"A08SQGEHMSL"}})
+2025-05-13 13:00:16,720 - slack_bolt.App - DEBUG - [client.py:99] - A new message enqueued (current queue size: 1)
+2025-05-13 13:00:16,726 - slack_bolt.App - DEBUG - [client.py:105] - A message dequeued (current queue size: 0)
+2025-05-13 13:00:16,745 - slack_bolt.App - DEBUG - [client.py:125] - Message processing started (type: hello, envelope_id: None)
+2025-05-13 13:00:16,746 - slack_bolt.App - DEBUG - [client.py:150] - Message processing completed (type: hello, envelope_id: None)
+2025-05-13 13:00:43,288 - slack_bolt.App - DEBUG - [client.py:236] - on_message invoked: (message: {"envelope_id":"00bbe0a6-921f-4b7d-a0a6-cd387fe525bc","payload":{"token":"K4ZhpQOf4Bh1W7IgNZugkX3V","team_id":"T08RN80K1N3","team_domain":"cell-logs","channel_id":"C08RN80PTP1","channel_name":"all-cell-logs","user_id":"U08RN80KECX","user_name":"emmanuel.kipngetich","command":"\/lokilens","text":"what happened to this transaction 672375962477797376 on February 2, 2025 at 23:29","api_app_id":"A08SQGEHMSL","is_enterprise_install":"false","response_url":"https:\/\/hooks.slack.com\/commands\/T08RN80K1N3\/8910399244688\/JNk6Zi3QP29FGBEXyFzfUBBk","trigger_id":"8910399293584.8872272647751.c3d5e6749a80889a6652494c241811e9"},"type":"slash_commands","accepts_response_payload":true})
+2025-05-13 13:00:43,301 - slack_bolt.App - DEBUG - [client.py:99] - A new message enqueued (current queue size: 1)
+2025-05-13 13:00:43,307 - slack_bolt.App - DEBUG - [client.py:105] - A message dequeued (current queue size: 0)
+2025-05-13 13:00:43,315 - slack_bolt.App - DEBUG - [client.py:125] - Message processing started (type: slash_commands, envelope_id: 00bbe0a6-921f-4b7d-a0a6-cd387fe525bc)
+2025-05-13 13:00:43,318 - slack_bolt.App - DEBUG - [app.py:561] - Applying slack_bolt.middleware.ssl_check.ssl_check.SslCheck
+2025-05-13 13:00:43,318 - slack_bolt.App - DEBUG - [app.py:561] - Applying slack_bolt.middleware.request_verification.request_verification.RequestVerification
+2025-05-13 13:00:43,318 - slack_bolt.App - DEBUG - [app.py:561] - Applying slack_bolt.middleware.authorization.single_team_authorization.SingleTeamAuthorization
+2025-05-13 13:00:43,319 - slack_bolt.App - DEBUG - [app.py:561] - Applying slack_bolt.middleware.ignoring_self_events.ignoring_self_events.IgnoringSelfEvents
+2025-05-13 13:00:43,319 - slack_bolt.App - DEBUG - [app.py:561] - Applying slack_bolt.middleware.url_verification.url_verification.UrlVerification
+2025-05-13 13:00:43,319 - slack_bolt.App - DEBUG - [app.py:561] - Applying slack_bolt.middleware.attaching_function_token.attaching_function_token.AttachingFunctionToken
+2025-05-13 13:00:43,319 - slack_bolt.App - DEBUG - [app.py:588] - Checking listener: handle_message_events ...
+2025-05-13 13:00:43,326 - slack_bolt.App - DEBUG - [app.py:588] - Checking listener: handle_loki_command ...
+2025-05-13 13:00:43,339 - slack_bolt.App - DEBUG - [app.py:588] - Checking listener: handle_lokilens_command ...
+2025-05-13 13:00:43,351 - slack_bolt.App - DEBUG - [app.py:612] - Running listener: handle_lokilens_command ...
+2025-05-13 13:00:43,367 - slack - INFO - [slack_app.py:388] - Received /lokilens command: {'token': 'K4ZhpQOf4Bh1W7IgNZugkX3V', 'team_id': 'T08RN80K1N3', 'team_domain': 'cell-logs', 'channel_id': 'C08RN80PTP1', 'channel_name': 'all-cell-logs', 'user_id': 'U08RN80KECX', 'user_name': 'emmanuel.kipngetich', 'command': '/lokilens', 'text': 'what happened to this transaction 672375962477797376 on February 2, 2025 at 23:29', 'api_app_id': 'A08SQGEHMSL', 'is_enterprise_install': 'false', 'response_url': 'https://hooks.slack.com/commands/T08RN80K1N3/8910399244688/JNk6Zi3QP29FGBEXyFzfUBBk', 'trigger_id': '8910399293584.8872272647751.c3d5e6749a80889a6652494c241811e9'}
+2025-05-13 13:00:43,367 - slack - DEBUG - [slack_app.py:393] - Command text: what happened to this transaction 672375962477797376 on February 2, 2025 at 23:29
+2025-05-13 13:00:43,367 - slack - INFO - [slack_app.py:405] - Starting natural language parsing
+2025-05-13 13:00:43,368 - slack - INFO - [slack_app.py:240] - Parsing natural language input: what happened to this transaction 672375962477797376 on February 2, 2025 at 23:29
+2025-05-13 13:00:43,368 - slack - DEBUG - [slack_app.py:266] - Sending request to OpenAI for parsing
+2025-05-13 13:00:43,383 - slack_bolt.App - DEBUG - [thread_runner.py:202] - Responding with status: 200 body: "Searching logs for: what happened to this transaction 672375962477797376 on February 2, 2025 at 23:29" (18 millis)
+2025-05-13 13:00:43,397 - slack_bolt.App - DEBUG - [client.py:201] - Sending a message (session id: c68694cd-f957-49fb-8d9b-da1097b0fcdb, message: {"envelope_id": "00bbe0a6-921f-4b7d-a0a6-cd387fe525bc", "payload": {"text": "Searching logs for: what happened to this transaction 672375962477797376 on February 2, 2025 at 23:29"}})
+2025-05-13 13:00:43,415 - slack_bolt.App - DEBUG - [internals.py:42] - Response time: 98 milliseconds
+2025-05-13 13:00:43,415 - slack_bolt.App - DEBUG - [client.py:150] - Message processing completed (type: slash_commands, envelope_id: 00bbe0a6-921f-4b7d-a0a6-cd387fe525bc)
+2025-05-13 13:00:47,937 - openai._base_client - DEBUG - [_base_client.py:482] - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'idempotency_key': 'stainless-python-retry-9f479831-c85b-4aa2-9baa-8d46b05a1d67', 'json_data': {'messages': [{'role': 'user', 'content': "\n    Parse the following text into a search ID and a time range.\n    The time range should be in the format YYYYMMDDHHMM (e.g., 202205130933 for May 13, 2022 at 09:33).\n    If the time is not specified, use the current time.\n    If the date is not specified, use today's date.\n    \n    Text: what happened to this transaction 672375962477797376 on February 2, 2025 at 23:29\n    \n    Return ONLY the search ID and time range in this exact format:\n    search_id: <id>\n    time_range: <YYYYMMDDHHMM>\n    \n    Do not include any other text or explanation.\n    "}], 'model': 'gpt-4', 'max_tokens': 100}}
+2025-05-13 13:00:48,115 - openai._base_client - DEBUG - [_base_client.py:965] - Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2025-05-13 13:00:48,122 - httpcore.connection - DEBUG - [_trace.py:47] - connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=5.0 socket_options=None
+2025-05-13 13:00:48,170 - httpcore.connection - DEBUG - [_trace.py:47] - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x10a8a74d0>
+2025-05-13 13:00:48,170 - httpcore.connection - DEBUG - [_trace.py:47] - start_tls.started ssl_context=<ssl.SSLContext object at 0x10a6f6d50> server_hostname='api.openai.com' timeout=5.0
+2025-05-13 13:00:48,212 - httpcore.connection - DEBUG - [_trace.py:47] - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x10ab86850>
+2025-05-13 13:00:48,219 - httpcore.http11 - DEBUG - [_trace.py:47] - send_request_headers.started request=<Request [b'POST']>
+2025-05-13 13:00:48,237 - httpcore.http11 - DEBUG - [_trace.py:47] - send_request_headers.complete
+2025-05-13 13:00:48,244 - httpcore.http11 - DEBUG - [_trace.py:47] - send_request_body.started request=<Request [b'POST']>
+2025-05-13 13:00:48,256 - httpcore.http11 - DEBUG - [_trace.py:47] - send_request_body.complete
+2025-05-13 13:00:48,256 - httpcore.http11 - DEBUG - [_trace.py:47] - receive_response_headers.started request=<Request [b'POST']>
+2025-05-13 13:00:48,971 - httpcore.http11 - DEBUG - [_trace.py:47] - receive_response_headers.complete return_value=(b'HTTP/1.1', 429, b'Too Many Requests', [(b'Date', b'Tue, 13 May 2025 10:00:49 GMT'), (b'Content-Type', b'application/json; charset=utf-8'), (b'Content-Length', b'337'), (b'Connection', b'keep-alive'), (b'vary', b'Origin'), (b'x-request-id', b'req_c98d2909c14c5ffa7661af65c031926f'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'cf-cache-status', b'DYNAMIC'), (b'Set-Cookie', b'__cf_bm=cqAxWpOt089ep2HPPOcEaJjqCvS6UNOrFMgbuvLY_ns-1747130449-1.0.1.1-jwK6dBWT4uSjkP2CoRFuMQkxNC07b6PEFFvq0jTmWAitK8NnpAFmokUPqdWqjgjbsFdEzKYit2g73aIZBAdbGp72g51AFAy6wBeUXds5ngs; path=/; expires=Tue, 13-May-25 10:30:49 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'X-Content-Type-Options', b'nosniff'), (b'Set-Cookie', b'_cfuvid=iO5.e6RQkLIH3_A_Drk_FHslfCgegwv.EnDYAfC55uM-1747130449121-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'CF-RAY', b'93f14f968bbd8a67-MBA'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-05-13 13:00:48,985 - httpx - INFO - [_client.py:1025] - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-05-13 13:00:48,998 - httpcore.http11 - DEBUG - [_trace.py:47] - receive_response_body.started request=<Request [b'POST']>
+2025-05-13 13:00:48,999 - httpcore.http11 - DEBUG - [_trace.py:47] - receive_response_body.complete
+2025-05-13 13:00:48,999 - httpcore.http11 - DEBUG - [_trace.py:47] - response_closed.started
+2025-05-13 13:00:48,999 - httpcore.http11 - DEBUG - [_trace.py:47] - response_closed.complete
+2025-05-13 13:00:49,006 - openai._base_client - DEBUG - [_base_client.py:1003] - HTTP Response: POST https://api.openai.com/v1/chat/completions "429 Too Many Requests" Headers([('date', 'Tue, 13 May 2025 10:00:49 GMT'), ('content-type', 'application/json; charset=utf-8'), ('content-length', '337'), ('connection', 'keep-alive'), ('vary', 'Origin'), ('x-request-id', 'req_c98d2909c14c5ffa7661af65c031926f'), ('strict-transport-security', 'max-age=31536000; includeSubDomains; preload'), ('cf-cache-status', 'DYNAMIC'), ('set-cookie', '__cf_bm=cqAxWpOt089ep2HPPOcEaJjqCvS6UNOrFMgbuvLY_ns-1747130449-1.0.1.1-jwK6dBWT4uSjkP2CoRFuMQkxNC07b6PEFFvq0jTmWAitK8NnpAFmokUPqdWqjgjbsFdEzKYit2g73aIZBAdbGp72g51AFAy6wBeUXds5ngs; path=/; expires=Tue, 13-May-25 10:30:49 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('x-content-type-options', 'nosniff'), ('set-cookie', '_cfuvid=iO5.e6RQkLIH3_A_Drk_FHslfCgegwv.EnDYAfC55uM-1747130449121-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('server', 'cloudflare'), ('cf-ray', '93f14f968bbd8a67-MBA'), ('alt-svc', 'h3=":443"; ma=86400')])
+2025-05-13 13:00:49,013 - openai._base_client - DEBUG - [_base_client.py:1011] - request_id: req_c98d2909c14c5ffa7661af65c031926f
+2025-05-13 13:00:49,013 - openai._base_client - DEBUG - [_base_client.py:1016] - Encountered httpx.HTTPStatusError
+Traceback (most recent call last):
+  File "/Users/emmanuel.kipngetich/Downloads/2025/AI/LokiLens/venv/lib/python3.13/site-packages/openai/_base_client.py", line 1014, in request
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/emmanuel.kipngetich/Downloads/2025/AI/LokiLens/venv/lib/python3.13/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '429 Too Many Requests' for url 'https://api.openai.com/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429
+2025-05-13 13:00:49,093 - openai._base_client - DEBUG - [_base_client.py:764] - Retrying due to status code 429
+2025-05-13 13:00:49,093 - openai._base_client - DEBUG - [_base_client.py:1055] - 2 retries left
+2025-05-13 13:00:49,099 - openai._base_client - INFO - [_base_client.py:1058] - Retrying request to /chat/completions in 0.396115 seconds
+2025-05-13 13:00:49,511 - openai._base_client - DEBUG - [_base_client.py:482] - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'idempotency_key': 'stainless-python-retry-9f479831-c85b-4aa2-9baa-8d46b05a1d67', 'json_data': {'messages': [{'role': 'user', 'content': "\n    Parse the following text into a search ID and a time range.\n    The time range should be in the format YYYYMMDDHHMM (e.g., 202205130933 for May 13, 2022 at 09:33).\n    If the time is not specified, use the current time.\n    If the date is not specified, use today's date.\n    \n    Text: what happened to this transaction 672375962477797376 on February 2, 2025 at 23:29\n    \n    Return ONLY the search ID and time range in this exact format:\n    search_id: <id>\n    time_range: <YYYYMMDDHHMM>\n    \n    Do not include any other text or explanation.\n    "}], 'model': 'gpt-4', 'max_tokens': 100}}
+2025-05-13 13:00:49,512 - openai._base_client - DEBUG - [_base_client.py:965] - Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2025-05-13 13:00:49,518 - httpcore.http11 - DEBUG - [_trace.py:47] - send_request_headers.started request=<Request [b'POST']>
+2025-05-13 13:00:49,531 - httpcore.http11 - DEBUG - [_trace.py:47] - send_request_headers.complete
+2025-05-13 13:00:49,538 - httpcore.http11 - DEBUG - [_trace.py:47] - send_request_body.started request=<Request [b'POST']>
+2025-05-13 13:00:49,549 - httpcore.http11 - DEBUG - [_trace.py:47] - send_request_body.complete
+2025-05-13 13:00:49,556 - httpcore.http11 - DEBUG - [_trace.py:47] - receive_response_headers.started request=<Request [b'POST']>
+2025-05-13 13:00:49,801 - httpcore.http11 - DEBUG - [_trace.py:47] - receive_response_headers.complete return_value=(b'HTTP/1.1', 429, b'Too Many Requests', [(b'Date', b'Tue, 13 May 2025 10:00:49 GMT'), (b'Content-Type', b'application/json; charset=utf-8'), (b'Content-Length', b'337'), (b'Connection', b'keep-alive'), (b'vary', b'Origin'), (b'x-request-id', b'req_4e2c064bc091ee06976f81d237a65d04'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'cf-cache-status', b'DYNAMIC'), (b'X-Content-Type-Options', b'nosniff'), (b'Server', b'cloudflare'), (b'CF-RAY', b'93f14f9ea9f48a67-MBA'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-05-13 13:00:49,807 - httpx - INFO - [_client.py:1025] - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-05-13 13:00:49,807 - httpcore.http11 - DEBUG - [_trace.py:47] - receive_response_body.started request=<Request [b'POST']>
+2025-05-13 13:00:49,814 - httpcore.http11 - DEBUG - [_trace.py:47] - receive_response_body.complete
+2025-05-13 13:00:49,820 - httpcore.http11 - DEBUG - [_trace.py:47] - response_closed.started
+2025-05-13 13:00:49,826 - httpcore.http11 - DEBUG - [_trace.py:47] - response_closed.complete
+2025-05-13 13:00:49,833 - openai._base_client - DEBUG - [_base_client.py:1003] - HTTP Response: POST https://api.openai.com/v1/chat/completions "429 Too Many Requests" Headers({'date': 'Tue, 13 May 2025 10:00:49 GMT', 'content-type': 'application/json; charset=utf-8', 'content-length': '337', 'connection': 'keep-alive', 'vary': 'Origin', 'x-request-id': 'req_4e2c064bc091ee06976f81d237a65d04', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'x-content-type-options': 'nosniff', 'server': 'cloudflare', 'cf-ray': '93f14f9ea9f48a67-MBA', 'alt-svc': 'h3=":443"; ma=86400'})
+2025-05-13 13:00:49,845 - openai._base_client - DEBUG - [_base_client.py:1011] - request_id: req_4e2c064bc091ee06976f81d237a65d04
+2025-05-13 13:00:49,852 - openai._base_client - DEBUG - [_base_client.py:1016] - Encountered httpx.HTTPStatusError
+Traceback (most recent call last):
+  File "/Users/emmanuel.kipngetich/Downloads/2025/AI/LokiLens/venv/lib/python3.13/site-packages/openai/_base_client.py", line 1014, in request
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/emmanuel.kipngetich/Downloads/2025/AI/LokiLens/venv/lib/python3.13/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '429 Too Many Requests' for url 'https://api.openai.com/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429
+2025-05-13 13:00:49,865 - openai._base_client - DEBUG - [_base_client.py:764] - Retrying due to status code 429
+2025-05-13 13:00:49,865 - openai._base_client - DEBUG - [_base_client.py:1053] - 1 retry left
+2025-05-13 13:00:49,871 - openai._base_client - INFO - [_base_client.py:1058] - Retrying request to /chat/completions in 0.983420 seconds
+2025-05-13 13:00:50,866 - openai._base_client - DEBUG - [_base_client.py:482] - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'idempotency_key': 'stainless-python-retry-9f479831-c85b-4aa2-9baa-8d46b05a1d67', 'json_data': {'messages': [{'role': 'user', 'content': "\n    Parse the following text into a search ID and a time range.\n    The time range should be in the format YYYYMMDDHHMM (e.g., 202205130933 for May 13, 2022 at 09:33).\n    If the time is not specified, use the current time.\n    If the date is not specified, use today's date.\n    \n    Text: what happened to this transaction 672375962477797376 on February 2, 2025 at 23:29\n    \n    Return ONLY the search ID and time range in this exact format:\n    search_id: <id>\n    time_range: <YYYYMMDDHHMM>\n    \n    Do not include any other text or explanation.\n    "}], 'model': 'gpt-4', 'max_tokens': 100}}
+2025-05-13 13:00:50,873 - openai._base_client - DEBUG - [_base_client.py:965] - Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2025-05-13 13:00:50,879 - httpcore.http11 - DEBUG - [_trace.py:47] - send_request_headers.started request=<Request [b'POST']>
+2025-05-13 13:00:50,886 - httpcore.http11 - DEBUG - [_trace.py:47] - send_request_headers.complete
+2025-05-13 13:00:50,892 - httpcore.http11 - DEBUG - [_trace.py:47] - send_request_body.started request=<Request [b'POST']>
+2025-05-13 13:00:50,904 - httpcore.http11 - DEBUG - [_trace.py:47] - send_request_body.complete
+2025-05-13 13:00:50,910 - httpcore.http11 - DEBUG - [_trace.py:47] - receive_response_headers.started request=<Request [b'POST']>
+2025-05-13 13:00:51,354 - httpcore.http11 - DEBUG - [_trace.py:47] - receive_response_headers.complete return_value=(b'HTTP/1.1', 429, b'Too Many Requests', [(b'Date', b'Tue, 13 May 2025 10:00:51 GMT'), (b'Content-Type', b'application/json; charset=utf-8'), (b'Content-Length', b'337'), (b'Connection', b'keep-alive'), (b'vary', b'Origin'), (b'x-request-id', b'req_13c25618e875c6d5a1c683f646000b05'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'cf-cache-status', b'DYNAMIC'), (b'X-Content-Type-Options', b'nosniff'), (b'Server', b'cloudflare'), (b'CF-RAY', b'93f14fa718918a67-MBA'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-05-13 13:00:51,366 - httpx - INFO - [_client.py:1025] - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-05-13 13:00:51,366 - httpcore.http11 - DEBUG - [_trace.py:47] - receive_response_body.started request=<Request [b'POST']>
+2025-05-13 13:00:51,366 - httpcore.http11 - DEBUG - [_trace.py:47] - receive_response_body.complete
+2025-05-13 13:00:51,366 - httpcore.http11 - DEBUG - [_trace.py:47] - response_closed.started
+2025-05-13 13:00:51,366 - httpcore.http11 - DEBUG - [_trace.py:47] - response_closed.complete
+2025-05-13 13:00:51,372 - openai._base_client - DEBUG - [_base_client.py:1003] - HTTP Response: POST https://api.openai.com/v1/chat/completions "429 Too Many Requests" Headers({'date': 'Tue, 13 May 2025 10:00:51 GMT', 'content-type': 'application/json; charset=utf-8', 'content-length': '337', 'connection': 'keep-alive', 'vary': 'Origin', 'x-request-id': 'req_13c25618e875c6d5a1c683f646000b05', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'x-content-type-options': 'nosniff', 'server': 'cloudflare', 'cf-ray': '93f14fa718918a67-MBA', 'alt-svc': 'h3=":443"; ma=86400'})
+2025-05-13 13:00:51,385 - openai._base_client - DEBUG - [_base_client.py:1011] - request_id: req_13c25618e875c6d5a1c683f646000b05
+2025-05-13 13:00:51,391 - openai._base_client - DEBUG - [_base_client.py:1016] - Encountered httpx.HTTPStatusError
+Traceback (most recent call last):
+  File "/Users/emmanuel.kipngetich/Downloads/2025/AI/LokiLens/venv/lib/python3.13/site-packages/openai/_base_client.py", line 1014, in request
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/emmanuel.kipngetich/Downloads/2025/AI/LokiLens/venv/lib/python3.13/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '429 Too Many Requests' for url 'https://api.openai.com/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429
+2025-05-13 13:00:51,404 - openai._base_client - DEBUG - [_base_client.py:1033] - Re-raising status error
+2025-05-13 13:00:51,411 - slack - ERROR - [slack_app.py:314] - Error parsing natural language input: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2025-05-13 13:00:51,411 - slack - ERROR - [slack_app.py:450] - Error processing command: Could not understand the input. Please try again with a clearer format. Example: '12345 happened yesterday at 3pm'
+Traceback (most recent call last):
+  File "/Users/emmanuel.kipngetich/Downloads/2025/AI/LokiLens/app/slack/slack_app.py", line 267, in parse_natural_language_input
+    response = openai_client.chat.completions.create(
+        model="gpt-4",
+        messages=[{"role": "user", "content": prompt}],
+        max_tokens=100
+    )
+  File "/Users/emmanuel.kipngetich/Downloads/2025/AI/LokiLens/venv/lib/python3.13/site-packages/openai/_utils/_utils.py", line 287, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/emmanuel.kipngetich/Downloads/2025/AI/LokiLens/venv/lib/python3.13/site-packages/openai/resources/chat/completions/completions.py", line 925, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<43 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/emmanuel.kipngetich/Downloads/2025/AI/LokiLens/venv/lib/python3.13/site-packages/openai/_base_client.py", line 1239, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/emmanuel.kipngetich/Downloads/2025/AI/LokiLens/venv/lib/python3.13/site-packages/openai/_base_client.py", line 1034, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/emmanuel.kipngetich/Downloads/2025/AI/LokiLens/app/slack/slack_app.py", line 406, in handle_lokilens_command
+    search_id, time_range, is_followup = parse_natural_language_input(command_text)
+                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/Users/emmanuel.kipngetich/Downloads/2025/AI/LokiLens/app/slack/slack_app.py", line 315, in parse_natural_language_input
+    raise ValueError(f"Could not understand the input. Please try again with a clearer format. Example: '12345 happened yesterday at 3pm'")
+ValueError: Could not understand the input. Please try again with a clearer format. Example: '12345 happened yesterday at 3pm'
+2025-05-13 13:00:51,502 - slack_bolt.App - DEBUG - [base_client.py:265] - Sending a request - url: https://slack.com/api/chat.postMessage, query_params: {}, body_params: {}, files: {}, json_body: {'channel': 'C08RN80PTP1', 'text': "Error processing command: Could not understand the input. Please try again with a clearer format. Example: '12345 happened yesterday at 3pm'", 'team_id': 'T08RN80K1N3'}, headers: {'Content-Type': 'application/json;charset=utf-8', 'Authorization': '(redacted)', 'User-Agent': 'Python/3.13.3 slackclient/3.35.0 Darwin/24.4.0'}
+2025-05-13 13:00:52,382 - slack_bolt.App - DEBUG - [base_client.py:556] - Received the following response - status: 200, headers: {'date': 'Tue, 13 May 2025 10:00:52 GMT', 'server': 'Apache', 'vary': 'Accept-Encoding', 'x-slack-req-id': '6d0526d1f4df9eec10115a5c5350692e', 'x-content-type-options': 'nosniff', 'x-xss-protection': '0', 'pragma': 'no-cache', 'cache-control': 'private, no-cache, no-store, must-revalidate', 'expires': 'Sat, 26 Jul 1997 05:00:00 GMT', 'content-type': 'application/json; charset=utf-8', 'x-accepted-oauth-scopes': 'chat:write', 'x-oauth-scopes': 'commands,chat:write,channels:history,groups:history,im:history', 'access-control-expose-headers': 'x-slack-req-id, retry-after', 'access-control-allow-headers': 'slack-route, x-slack-version-ts, x-b3-traceid, x-b3-spanid, x-b3-parentspanid, x-b3-sampled, x-b3-flags', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'referrer-policy': 'no-referrer', 'x-slack-unique-id': 'aCMYVLxj4F-o3MjxdYAHZQAAEBE', 'x-slack-backend': 'r', 'access-control-allow-origin': '*', 'content-length': '1033', 'via': '1.1 slack-prod.tinyspeck.com, envoy-www-iad-igtbelwi,envoy-edge-bom-uczxmmgh', 'x-envoy-attempt-count': '1', 'x-envoy-upstream-service-time': '277', 'x-backend': 'main_normal main_canary_with_overflow main_control_with_overflow', 'x-server': 'slack-www-hhvm-main-iad-ooqq', 'x-slack-shared-secret-outcome': 'no-match', 'x-edge-backend': 'envoy-www', 'x-slack-edge-shared-secret-outcome': 'no-match', 'connection': 'close'}, body: {"ok":true,"channel":"C08RN80PTP1","ts":"1747130452.276069","message":{"user":"U08SQGNTJU8","type":"message","ts":"1747130452.276069","bot_id":"B08SQGNSACQ","app_id":"A08SQGEHMSL","text":"Error processing command: Could not understand the input. Please try again with a clearer format. Example: '12345 happened yesterday at 3pm'","team":"T08RN80K1N3","bot_profile":{"id":"B08SQGNSACQ","app_id":"A08SQGEHMSL","user_id":"U08SQGNTJU8","name":"Lokilens","icons":{"image_36":"https:\/\/a.slack-edge.com\/80588\/img\/plugins\/app\/bot_36.png","image_48":"https:\/\/a.slack-edge.com\/80588\/img\/plugins\/app\/bot_48.png","image_72":"https:\/\/a.slack-edge.com\/80588\/img\/plugins\/app\/service_72.png"},"deleted":false,"updated":1747104773,"team_id":"T08RN80K1N3"},"blocks":[{"type":"rich_text","block_id":"PBIUO","elements":[{"type":"rich_text_section","elements":[{"type":"text","text":"Error processing command: Could not understand the input. Please try again with a clearer format. Example: '12345 happened yesterday at 3pm'"}]}]}]}}
+2025-05-13 13:00:53,300 - slack_bolt.App - DEBUG - [client.py:236] - on_message invoked: (message: {"envelope_id":"c8b6998b-d8c6-4b3c-b971-7b74b5473e6a","payload":{"token":"K4ZhpQOf4Bh1W7IgNZugkX3V","team_id":"T08RN80K1N3","context_team_id":"T08RN80K1N3","context_enterprise_id":null,"api_app_id":"A08SQGEHMSL","event":{"user":"U08SQGNTJU8","type":"message","ts":"1747130452.276069","bot_id":"B08SQGNSACQ","app_id":"A08SQGEHMSL","text":"Error processing command: Could not understand the input. Please try again with a clearer format. Example: '12345 happened yesterday at 3pm'","team":"T08RN80K1N3","bot_profile":{"id":"B08SQGNSACQ","deleted":false,"name":"Lokilens","updated":1747104773,"app_id":"A08SQGEHMSL","user_id":"U08SQGNTJU8","icons":{"image_36":"https:\/\/a.slack-edge.com\/80588\/img\/plugins\/app\/bot_36.png","image_48":"https:\/\/a.slack-edge.com\/80588\/img\/plugins\/app\/bot_48.png","image_72":"https:\/\/a.slack-edge.com\/80588\/img\/plugins\/app\/service_72.png"},"team_id":"T08RN80K1N3"},"blocks":[{"type":"rich_text","block_id":"zVQZY","elements":[{"type":"rich_text_section","elements":[{"type":"text","text":"Error processing command: Could not understand the input. Please try again with a clearer format. Example: '12345 happened yesterday at 3pm'"}]}]}],"channel":"C08RN80PTP1","event_ts":"1747130452.276069","channel_type":"channel"},"type":"event_callback","event_id":"Ev08S6CYE6TC","event_time":1747130452,"authorizations":[{"enterprise_id":null,"team_id":"T08RN80K1N3","user_id":"U08SQGNTJU8","is_bot":true,"is_enterprise_install":false}],"is_ext_shared_channel":false,"event_context":"4-eyJldCI6Im1lc3NhZ2UiLCJ0aWQiOiJUMDhSTjgwSzFOMyIsImFpZCI6IkEwOFNRR0VITVNMIiwiY2lkIjoiQzA4Uk44MFBUUDEifQ"},"type":"events_api","accepts_response_payload":false,"retry_attempt":0,"retry_reason":""})
+2025-05-13 13:00:53,312 - slack_bolt.App - DEBUG - [client.py:99] - A new message enqueued (current queue size: 1)
+2025-05-13 13:00:53,319 - slack_bolt.App - DEBUG - [client.py:105] - A message dequeued (current queue size: 0)
+2025-05-13 13:00:53,337 - slack_bolt.App - DEBUG - [client.py:125] - Message processing started (type: events_api, envelope_id: c8b6998b-d8c6-4b3c-b971-7b74b5473e6a)
+2025-05-13 13:00:53,351 - slack_bolt.App - DEBUG - [app.py:561] - Applying slack_bolt.middleware.ssl_check.ssl_check.SslCheck
+2025-05-13 13:00:53,357 - slack_bolt.App - DEBUG - [app.py:561] - Applying slack_bolt.middleware.request_verification.request_verification.RequestVerification
+2025-05-13 13:00:53,357 - slack_bolt.App - DEBUG - [app.py:561] - Applying slack_bolt.middleware.authorization.single_team_authorization.SingleTeamAuthorization
+2025-05-13 13:00:53,357 - slack_bolt.App - DEBUG - [app.py:561] - Applying slack_bolt.middleware.ignoring_self_events.ignoring_self_events.IgnoringSelfEvents
+2025-05-13 13:00:53,357 - slack_bolt.IgnoringSelfEvents - DEBUG - [ignoring_self_events.py:71] - Skipped self event: {'user': 'U08SQGNTJU8', 'type': 'message', 'ts': '1747130452.276069', 'bot_id': 'B08SQGNSACQ', 'app_id': 'A08SQGEHMSL', 'text': "Error processing command: Could not understand the input. Please try again with a clearer format. Example: '12345 happened yesterday at 3pm'", 'team': 'T08RN80K1N3', 'bot_profile': {'id': 'B08SQGNSACQ', 'deleted': False, 'name': 'Lokilens', 'updated': 1747104773, 'app_id': 'A08SQGEHMSL', 'user_id': 'U08SQGNTJU8', 'icons': {'image_36': 'https://a.slack-edge.com/80588/img/plugins/app/bot_36.png', 'image_48': 'https://a.slack-edge.com/80588/img/plugins/app/bot_48.png', 'image_72': 'https://a.slack-edge.com/80588/img/plugins/app/service_72.png'}, 'team_id': 'T08RN80K1N3'}, 'blocks': [{'type': 'rich_text', 'block_id': 'zVQZY', 'elements': [{'type': 'rich_text_section', 'elements': [{'type': 'text', 'text': "Error processing command: Could not understand the input. Please try again with a clearer format. Example: '12345 happened yesterday at 3pm'"}]}]}], 'channel': 'C08RN80PTP1', 'event_ts': '1747130452.276069', 'channel_type': 'channel'}
+2025-05-13 13:00:53,370 - slack_bolt.App - DEBUG - [client.py:201] - Sending a message (session id: c68694cd-f957-49fb-8d9b-da1097b0fcdb, message: {"envelope_id": "c8b6998b-d8c6-4b3c-b971-7b74b5473e6a"})
+2025-05-13 13:00:53,388 - slack_bolt.App - DEBUG - [internals.py:42] - Response time: 37 milliseconds
+2025-05-13 13:00:53,394 - slack_bolt.App - DEBUG - [client.py:150] - Message processing completed (type: events_api, envelope_id: c8b6998b-d8c6-4b3c-b971-7b74b5473e6a)

@@ -37,3 +37,12 @@
 2025-05-13 12:54:28,728 - mcp.server.sse - DEBUG - [sse.py:84] - SseServerTransport initialized with endpoint: /mcp/messages/
 2025-05-13 12:54:28,728 - fastapi_mcp.server - INFO - [server.py:285] - No auth config provided, skipping auth setup
 2025-05-13 12:54:28,728 - fastapi_mcp.server - INFO - [server.py:359] - MCP server listening at /mcp
+2025-05-13 13:00:14,906 - mcp.server.sse - DEBUG - [sse.py:92] - Setting up SSE connection
+2025-05-13 13:00:14,907 - mcp.server.sse - DEBUG - [sse.py:105] - Created new session with ID: 094da9b9-4c0c-4c0e-ab5f-65311f4bf241
+2025-05-13 13:00:14,927 - mcp.server.sse - DEBUG - [sse.py:143] - Starting SSE response task
+2025-05-13 13:00:14,927 - mcp.server.sse - DEBUG - [sse.py:146] - Yielding read and write streams
+2025-05-13 13:00:14,931 - mcp.server.sse - DEBUG - [sse.py:112] - Starting SSE writer
+2025-05-13 13:00:14,931 - mcp.server.sse - DEBUG - [sse.py:115] - Sent endpoint event: /mcp/messages/?session_id=094da9b94c0c4c0eab5f65311f4bf241
+2025-05-13 13:00:14,931 - sse_starlette.sse - DEBUG - [sse.py:161] - chunk: b'event: endpoint\r\ndata: /mcp/messages/?session_id=094da9b94c0c4c0eab5f65311f4bf241\r\n\r\n'
+2025-05-13 13:00:14,934 - sse_starlette.sse - DEBUG - [sse.py:182] - Got event: http.disconnect. Stop streaming.
+2025-05-13 13:00:14,935 - root - DEBUG - [sse.py:141] - Client session disconnected 094da9b9-4c0c-4c0e-ab5f-65311f4bf241
