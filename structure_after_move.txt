@@ -1,0 +1,41 @@
+total 40
+-rw-r--r--@  1 emmanuel.kipngetich  staff     0 May 13 09:03 __init__.py
+drwxr-xr-x@ 10 emmanuel.kipngetich  staff   320 May 13 09:03 __pycache__
+drwxr-xr-x@  3 emmanuel.kipngetich  staff    96 May 13 09:03 ai
+-rw-r--r--@  1 emmanuel.kipngetich  staff  8677 May 13 09:00 app.py
+-rw-r--r--@  1 emmanuel.kipngetich  staff  1765 May 13 09:00 log_processor.py
+drwxr-xr-x@  5 emmanuel.kipngetich  staff   160 May 13 09:11 logsearch
+-rw-r--r--@  1 emmanuel.kipngetich  staff  1906 May 13 09:00 main.py
+drwxr-xr-x@  4 emmanuel.kipngetich  staff   128 May 13 09:11 mcp
+drwxr-xr-x@  4 emmanuel.kipngetich  staff   128 May 13 09:11 slack
+
+app/__pycache__:
+total 136
+-rw-r--r--@ 1 emmanuel.kipngetich  staff    166 May 13 09:03 __init__.cpython-313.pyc
+-rw-r--r--@ 1 emmanuel.kipngetich  staff  10652 May 13 09:00 app.cpython-313.pyc
+-rw-r--r--@ 1 emmanuel.kipngetich  staff   3055 May 13 08:33 log_processor.cpython-313.pyc
+-rw-r--r--@ 1 emmanuel.kipngetich  staff   2155 May 13 08:45 log_search.cpython-313.pyc
+-rw-r--r--@ 1 emmanuel.kipngetich  staff   2854 May 13 08:33 main.cpython-313.pyc
+-rw-r--r--@ 1 emmanuel.kipngetich  staff  20573 May 13 08:33 mcp_client.cpython-313.pyc
+-rw-r--r--@ 1 emmanuel.kipngetich  staff   4569 May 13 08:37 s3_operations.cpython-313.pyc
+-rw-r--r--@ 1 emmanuel.kipngetich  staff   5489 May 13 08:47 slack_app.cpython-313.pyc
+
+app/ai:
+total 0
+-rw-r--r--@ 1 emmanuel.kipngetich  staff  0 May 13 09:03 __init__.py
+
+app/logsearch:
+total 16
+-rw-r--r--@ 1 emmanuel.kipngetich  staff     0 May 13 09:03 __init__.py
+-rw-r--r--@ 1 emmanuel.kipngetich  staff  1578 May 13 09:00 log_search.py
+-rw-r--r--@ 1 emmanuel.kipngetich  staff  3392 May 13 08:33 s3_operations.py
+
+app/mcp:
+total 48
+-rw-r--r--@ 1 emmanuel.kipngetich  staff      0 May 13 09:03 __init__.py
+-rw-r--r--@ 1 emmanuel.kipngetich  staff  20873 May 13 09:00 mcp_client.py
+
+app/slack:
+total 16
+-rw-r--r--@ 1 emmanuel.kipngetich  staff     0 May 13 09:03 __init__.py
+-rw-r--r--@ 1 emmanuel.kipngetich  staff  4238 May 13 09:00 slack_app.py

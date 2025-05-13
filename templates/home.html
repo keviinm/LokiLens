@@ -1,69 +1,25 @@
-{% extends "base.html" %}
-
-{% block title %}Home{% endblock %}
-
-{% block content %}
-<div class="row justify-content-center">
-    <div class="col-md-8">
-        <div class="card">
-            <div class="card-header">
-                <h4 class="mb-0">Search Logs</h4>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LokiLens - Log Search</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>LokiLens Log Search</h1>
+        <form action="/search" method="post">
+            <div>
+                <label for="search_id">Search ID:</label>
+                <input type="text" id="search_id" name="search_id" required>
             </div>
-            <div class="card-body">
-                <form action="/search" method="post">
-                    <div class="mb-3">
-                        <label for="search_id" class="form-label">Search ID</label>
-                        <input type="text" class="form-control" id="search_id" name="search_id" required>
-                        <div class="form-text">Enter the ID to search for in the logs</div>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Time Ranges (minutes)</label>
-                        <div id="timeRanges">
-                            <div class="input-group mb-2">
-                                <input type="number" class="form-control" name="time_ranges[]" value="30" min="1" max="1440">
-                                <button type="button" class="btn btn-outline-danger remove-time-range">
-                                    <i class="fas fa-times"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <button type="button" class="btn btn-outline-primary" id="addTimeRange">
-                            <i class="fas fa-plus"></i> Add Another Time Range
-                        </button>
-                        <div class="form-text">Search logs for each time range (default: 30 minutes)</div>
-                    </div>
-                    <button type="submit" class="btn btn-primary">
-                        <i class="fas fa-search"></i> Search
-                    </button>
-                </form>
+            <div>
+                <label for="time_ranges">Time Ranges (one per line):</label>
+                <textarea id="time_ranges" name="time_ranges" rows="5" required></textarea>
             </div>
-        </div>
+            <button type="submit">Search</button>
+        </form>
     </div>
-</div>
-
-{% block extra_js %}
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const timeRangesContainer = document.getElementById('timeRanges');
-    const addTimeRangeBtn = document.getElementById('addTimeRange');
-    
-    addTimeRangeBtn.addEventListener('click', function() {
-        const newTimeRange = document.createElement('div');
-        newTimeRange.className = 'input-group mb-2';
-        newTimeRange.innerHTML = `
-            <input type="number" class="form-control" name="time_ranges[]" value="30" min="1" max="1440">
-            <button type="button" class="btn btn-outline-danger remove-time-range">
-                <i class="fas fa-times"></i>
-            </button>
-        `;
-        timeRangesContainer.appendChild(newTimeRange);
-    });
-    
-    timeRangesContainer.addEventListener('click', function(e) {
-        if (e.target.closest('.remove-time-range')) {
-            e.target.closest('.input-group').remove();
-        }
-    });
-});
-</script>
-{% endblock %}
-{% endblock %} 
+</body>
+</html> 

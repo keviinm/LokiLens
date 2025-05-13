@@ -7,8 +7,8 @@ import logging
 from datetime import datetime, timedelta
 import os
 from dotenv import load_dotenv
-from s3_operations import S3Operations
-from log_processor import LogProcessor
+from app.logsearch.s3_operations import S3Operations
+from app.logsearch.log_processor import LogProcessor
 from typing import List, Optional
 from pydantic import BaseModel
 
@@ -23,7 +23,7 @@ logger = logging.getLogger(__name__)
 load_dotenv()
 
 # Check required environment variables
-required_env_vars = ['AWS_ACCESS_KEY_ID', 'AWS_SECRET_ACCESS_KEY', 'AWS_BUCKET_NAME']
+required_env_vars = ['AWS_ACCESS_KEY_ID', 'AWS_SECRET_ACCESS_KEY', 'BUCKET_NAME']
 missing_vars = [var for var in required_env_vars if not os.getenv(var)]
 
 if missing_vars:
@@ -71,10 +71,7 @@ class SearchResponse(BaseModel):
 mcp = FastApiMCP(
     app,
     name="LokiLens MCP",
-    description="Model Context Protocol interface for LokiLens log search",
-    base_url="http://localhost:8000",
-    describe_all_responses=True,
-    describe_full_response_schema=True
+    description="Model Context Protocol interface for LokiLens log search"
 )
 
 def parse_timestamp(timestamp_str: str) -> datetime:
@@ -153,7 +150,7 @@ async def search_logs_api(request: SearchRequest):
 async def search_logs(search_id: str, time_ranges: list) -> dict:
     """Common search function used by both HTML and API endpoints."""
     all_results = []
-    bucket_name = os.getenv('AWS_BUCKET_NAME')
+    bucket_name = os.getenv('BUCKET_NAME')
     
     if not bucket_name:
         raise ValueError("AWS bucket name is not configured")

@@ -1,38 +1,31 @@
-{% extends "base.html" %}
-
-{% block title %}Search Results{% endblock %}
-
-{% block content %}
-<div class="row justify-content-center">
-    <div class="col-md-10">
-        <div class="card">
-            <div class="card-header d-flex justify-content-between align-items-center">
-                <h4 class="mb-0">Search Results</h4>
-                <a href="/" class="btn btn-outline-primary">
-                    <i class="fas fa-arrow-left"></i> New Search
-                </a>
-            </div>
-            <div class="card-body">
-                {% if logs %}
-                    <div class="mb-3">
-                        <p class="text-muted">Found {{ logs|length }} log entries for ID: {{ search_id }}</p>
-                    </div>
-                    <div class="log-entries">
-                        {% for log in logs %}
-                            <div class="log-entry">
-                                <div class="timestamp">{{ log.timestamp }}</div>
-                                <div class="service-badge">{{ log.service }}</div>
-                                <div class="log-message">{{ log.message }}</div>
-                            </div>
-                        {% endfor %}
-                    </div>
-                {% else %}
-                    <div class="alert alert-info">
-                        <i class="fas fa-info-circle"></i> No logs found for ID: {{ search_id }}
-                    </div>
-                {% endif %}
-            </div>
-        </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LokiLens - Search Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Search Results for ID: {{ search_id }}</h1>
+        <a href="/" class="back-link">← Back to Search</a>
+        
+        {% if results %}
+            {% for container_name, logs in results.items() %}
+                <div class="log-group">
+                    <h2>Container: {{ container_name }}</h2>
+                    {% for log in logs %}
+                        <div class="log-entry">
+                            <div class="timestamp">{{ log.timestamp }}</div>
+                            <div class="message">{{ log.message }}</div>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endfor %}
+        {% else %}
+            <p class="no-results">No results found for the given search criteria.</p>
+        {% endif %}
     </div>
-</div>
-{% endblock %} 
+</body>
+</html> 

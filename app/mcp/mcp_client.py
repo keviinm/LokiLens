@@ -10,13 +10,11 @@ import urllib.parse
 import sseclient
 from datetime import datetime, timedelta
 import re
+from app.utils.logging_config import setup_logging
 
-# Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s'
-)
-logger = logging.getLogger(__name__)
+# Setup logging
+loggers = setup_logging()
+logger = loggers['mcp']
 
 # Load environment variables
 load_dotenv()
@@ -41,6 +39,7 @@ class LogSearchClient:
         self.last_search_results = None
         
         if not self.openai_api_key:
+            logger.error("OpenAI API key not provided")
             raise ValueError("OpenAI API key is required")
         
         logger.info("Initializing OpenAI client...")

@@ -1,0 +1,70 @@
+2025-05-13 10:01:23,898 - slack - INFO - [slack_app.py:24] - Loading environment variables...
+2025-05-13 10:01:23,899 - slack - INFO - [slack_app.py:26] - Environment variables loaded successfully
+2025-05-13 10:01:23,899 - slack - INFO - [slack_app.py:29] - Initializing Slack app...
+2025-05-13 10:01:23,979 - slack_bolt.App - DEBUG - [base_client.py:265] - Sending a request - url: https://slack.com/api/auth.test, query_params: {}, body_params: {}, files: {}, json_body: None, headers: {'Content-Type': 'application/x-www-form-urlencoded', 'Authorization': '(redacted)', 'User-Agent': 'Bolt/1.23.0 Python/3.13.3 slackclient/3.35.0 Darwin/24.4.0'}
+2025-05-13 10:01:24,736 - slack_bolt.App - DEBUG - [base_client.py:556] - Received the following response - status: 200, headers: {'date': 'Tue, 13 May 2025 07:01:24 GMT', 'server': 'Apache', 'vary': 'Accept-Encoding', 'x-slack-req-id': 'ca1f00743fa7246ab0beda1ee77dba0f', 'x-content-type-options': 'nosniff', 'x-xss-protection': '0', 'pragma': 'no-cache', 'cache-control': 'private, no-cache, no-store, must-revalidate', 'expires': 'Sat, 26 Jul 1997 05:00:00 GMT', 'content-type': 'application/json; charset=utf-8', 'x-oauth-scopes': 'commands,chat:write', 'access-control-expose-headers': 'x-slack-req-id, retry-after', 'access-control-allow-headers': 'slack-route, x-slack-version-ts, x-b3-traceid, x-b3-spanid, x-b3-parentspanid, x-b3-sampled, x-b3-flags', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'referrer-policy': 'no-referrer', 'x-slack-unique-id': 'aCLuRD3suvM7zpsxqChyTQAA8BA', 'x-slack-backend': 'r', 'access-control-allow-origin': '*', 'content-length': '189', 'via': '1.1 slack-prod.tinyspeck.com, envoy-www-iad-qpstzmzh,envoy-edge-bom-eivmawnr', 'x-envoy-attempt-count': '1', 'x-envoy-upstream-service-time': '213', 'x-backend': 'main_normal main_canary_with_overflow main_control_with_overflow', 'x-server': 'slack-www-hhvm-main-iad-zzvn', 'x-slack-shared-secret-outcome': 'no-match', 'x-edge-backend': 'envoy-www', 'x-slack-edge-shared-secret-outcome': 'no-match', 'connection': 'close'}, body: {"ok":true,"url":"https:\/\/cell-logs.slack.com\/","team":"Cell-logs","user":"lokilens","team_id":"T08RN80K1N3","user_id":"U08SQGNTJU8","bot_id":"B08SQGNSACQ","is_enterprise_install":false}
+2025-05-13 10:01:24,736 - slack - INFO - [slack_app.py:31] - Slack app initialized successfully
+2025-05-13 10:01:24,736 - slack - INFO - [slack_app.py:34] - Initializing S3 operations...
+2025-05-13 10:01:24,736 - s3 - INFO - [s3_operations.py:14] - Initializing S3 operations
+2025-05-13 10:01:24,736 - botocore.hooks - DEBUG - [hooks.py:482] - Changing event name from creating-client-class.iot-data to creating-client-class.iot-data-plane
+2025-05-13 10:01:24,738 - botocore.hooks - DEBUG - [hooks.py:482] - Changing event name from before-call.apigateway to before-call.api-gateway
+2025-05-13 10:01:24,738 - botocore.hooks - DEBUG - [hooks.py:482] - Changing event name from request-created.machinelearning.Predict to request-created.machine-learning.Predict
+2025-05-13 10:01:24,739 - botocore.hooks - DEBUG - [hooks.py:482] - Changing event name from before-parameter-build.autoscaling.CreateLaunchConfiguration to before-parameter-build.auto-scaling.CreateLaunchConfiguration
+2025-05-13 10:01:24,739 - botocore.hooks - DEBUG - [hooks.py:482] - Changing event name from before-parameter-build.route53 to before-parameter-build.route-53
+2025-05-13 10:01:24,739 - botocore.hooks - DEBUG - [hooks.py:482] - Changing event name from request-created.cloudsearchdomain.Search to request-created.cloudsearch-domain.Search
+2025-05-13 10:01:24,739 - botocore.hooks - DEBUG - [hooks.py:482] - Changing event name from docs.*.autoscaling.CreateLaunchConfiguration.complete-section to docs.*.auto-scaling.CreateLaunchConfiguration.complete-section
+2025-05-13 10:01:24,740 - botocore.hooks - DEBUG - [hooks.py:482] - Changing event name from before-parameter-build.logs.CreateExportTask to before-parameter-build.cloudwatch-logs.CreateExportTask
+2025-05-13 10:01:24,741 - botocore.hooks - DEBUG - [hooks.py:482] - Changing event name from docs.*.logs.CreateExportTask.complete-section to docs.*.cloudwatch-logs.CreateExportTask.complete-section
+2025-05-13 10:01:24,741 - botocore.hooks - DEBUG - [hooks.py:482] - Changing event name from before-parameter-build.cloudsearchdomain.Search to before-parameter-build.cloudsearch-domain.Search
+2025-05-13 10:01:24,741 - botocore.hooks - DEBUG - [hooks.py:482] - Changing event name from docs.*.cloudsearchdomain.Search.complete-section to docs.*.cloudsearch-domain.Search.complete-section
+2025-05-13 10:01:24,743 - botocore.loaders - DEBUG - [loaders.py:181] - Loading JSON file: /Users/emmanuel.kipngetich/Downloads/2025/AI/LokiLens/venv/lib/python3.13/site-packages/botocore/data/endpoints.json
+2025-05-13 10:01:24,754 - botocore.loaders - DEBUG - [loaders.py:181] - Loading JSON file: /Users/emmanuel.kipngetich/Downloads/2025/AI/LokiLens/venv/lib/python3.13/site-packages/botocore/data/sdk-default-configuration.json
+2025-05-13 10:01:24,754 - botocore.hooks - DEBUG - [hooks.py:238] - Event choose-service-name: calling handler <function handle_service_name_alias at 0x10355d1c0>
+2025-05-13 10:01:24,777 - botocore.loaders - DEBUG - [loaders.py:181] - Loading JSON file: /Users/emmanuel.kipngetich/Downloads/2025/AI/LokiLens/venv/lib/python3.13/site-packages/botocore/data/s3/2006-03-01/service-2.json.gz
+2025-05-13 10:01:24,782 - botocore.loaders - DEBUG - [loaders.py:181] - Loading JSON file: /Users/emmanuel.kipngetich/Downloads/2025/AI/LokiLens/venv/lib/python3.13/site-packages/botocore/data/s3/2006-03-01/service-2.sdk-extras.json
+2025-05-13 10:01:24,800 - botocore.loaders - DEBUG - [loaders.py:181] - Loading JSON file: /Users/emmanuel.kipngetich/Downloads/2025/AI/LokiLens/venv/lib/python3.13/site-packages/botocore/data/s3/2006-03-01/endpoint-rule-set-1.json.gz
+2025-05-13 10:01:24,803 - botocore.loaders - DEBUG - [loaders.py:181] - Loading JSON file: /Users/emmanuel.kipngetich/Downloads/2025/AI/LokiLens/venv/lib/python3.13/site-packages/botocore/data/partitions.json
+2025-05-13 10:01:24,804 - botocore.hooks - DEBUG - [hooks.py:238] - Event creating-client-class.s3: calling handler <function add_generate_presigned_post at 0x1034a2520>
+2025-05-13 10:01:24,804 - botocore.hooks - DEBUG - [hooks.py:238] - Event creating-client-class.s3: calling handler <function lazy_call.<locals>._handler at 0x104f4d260>
+2025-05-13 10:01:24,822 - botocore.hooks - DEBUG - [hooks.py:238] - Event creating-client-class.s3: calling handler <function add_generate_presigned_url at 0x1034a22a0>
+2025-05-13 10:01:24,823 - botocore.configprovider - DEBUG - [configprovider.py:989] - Looking for endpoint for s3 via: environment_service
+2025-05-13 10:01:24,823 - botocore.configprovider - DEBUG - [configprovider.py:989] - Looking for endpoint for s3 via: environment_global
+2025-05-13 10:01:24,823 - botocore.configprovider - DEBUG - [configprovider.py:989] - Looking for endpoint for s3 via: config_service
+2025-05-13 10:01:24,823 - botocore.configprovider - DEBUG - [configprovider.py:989] - Looking for endpoint for s3 via: config_global
+2025-05-13 10:01:24,823 - botocore.configprovider - DEBUG - [configprovider.py:1005] - No configured endpoint found.
+2025-05-13 10:01:24,825 - botocore.endpoint - DEBUG - [endpoint.py:414] - Setting s3 timeout as (60, 60)
+2025-05-13 10:01:24,826 - botocore.loaders - DEBUG - [loaders.py:181] - Loading JSON file: /Users/emmanuel.kipngetich/Downloads/2025/AI/LokiLens/venv/lib/python3.13/site-packages/botocore/data/_retry.json
+2025-05-13 10:01:24,827 - botocore.client - DEBUG - [client.py:290] - Registering retry handlers for service: s3
+2025-05-13 10:01:24,827 - botocore.utils - DEBUG - [utils.py:1718] - Registering S3 region redirector handler
+2025-05-13 10:01:24,827 - botocore.utils - DEBUG - [utils.py:1666] - Registering S3Express Identity Resolver
+2025-05-13 10:01:24,827 - s3 - INFO - [s3_operations.py:24] - S3 client initialized successfully
+2025-05-13 10:01:24,827 - slack - INFO - [slack_app.py:39] - S3 operations initialized successfully
+2025-05-13 10:01:24,828 - slack - INFO - [slack_app.py:42] - Initializing OpenAI client...
+2025-05-13 10:01:24,851 - slack - INFO - [slack_app.py:44] - OpenAI client initialized successfully
+2025-05-13 10:01:24,851 - slack - INFO - [slack_app.py:47] - Initializing MCP client...
+2025-05-13 10:01:24,851 - mcp - INFO - [mcp_client.py:30] - Initializing LogSearchClient...
+2025-05-13 10:01:24,851 - mcp - INFO - [mcp_client.py:45] - Initializing OpenAI client...
+2025-05-13 10:01:24,858 - mcp - INFO - [mcp_client.py:48] - OpenAI client initialized successfully
+2025-05-13 10:01:24,858 - mcp - INFO - [mcp_client.py:53] - Initializing MCP tools...
+2025-05-13 10:01:24,858 - mcp - INFO - [mcp_client.py:165] - Connecting to MCP server at http://localhost:8000/mcp
+2025-05-13 10:01:24,859 - urllib3.connectionpool - DEBUG - [connectionpool.py:241] - Starting new HTTP connection (1): localhost:8000
+2025-05-13 10:01:24,873 - urllib3.connectionpool - DEBUG - [connectionpool.py:544] - http://localhost:8000 "GET /mcp HTTP/1.1" 200 None
+2025-05-13 10:01:24,873 - mcp - INFO - [mcp_client.py:180] - Response status code: 200
+2025-05-13 10:01:24,873 - mcp - INFO - [mcp_client.py:181] - Response headers: {'date': 'Tue, 13 May 2025 07:01:24 GMT', 'server': 'uvicorn', 'cache-control': 'no-store', 'connection': 'keep-alive', 'x-accel-buffering': 'no', 'content-type': 'text/event-stream; charset=utf-8', 'Transfer-Encoding': 'chunked'}
+2025-05-13 10:01:24,873 - sseclient - DEBUG - [__init__.py:32] - Initialized SSE client from event source <Response [200]>
+2025-05-13 10:01:24,873 - sseclient - DEBUG - [__init__.py:108] - Dispatching endpoint event, 58 bytes...
+2025-05-13 10:01:24,873 - mcp - INFO - [mcp_client.py:190] - Received session ID: 0a943aa92cf146ed8e1406f0840ab903
+2025-05-13 10:01:24,873 - mcp - INFO - [mcp_client.py:56] - MCP tools initialized successfully
+2025-05-13 10:01:24,873 - slack - INFO - [slack_app.py:49] - MCP client initialized successfully
+2025-05-13 10:01:24,874 - slack - INFO - [slack_app.py:257] - Starting application...
+2025-05-13 10:01:24,874 - slack - INFO - [slack_app.py:251] - Starting Slack app in Socket Mode
+2025-05-13 10:01:24,874 - slack_bolt.App - DEBUG - [base_client.py:265] - Sending a request - url: https://slack.com/api/apps.connections.open, query_params: {}, body_params: {}, files: {}, json_body: None, headers: {'Content-Type': 'application/x-www-form-urlencoded', 'Authorization': '(redacted)', 'User-Agent': 'Bolt/1.23.0 Python/3.13.3 slackclient/3.35.0 Darwin/24.4.0'}
+2025-05-13 10:01:25,633 - slack_bolt.App - DEBUG - [base_client.py:556] - Received the following response - status: 200, headers: {'date': 'Tue, 13 May 2025 07:01:25 GMT', 'server': 'Apache', 'vary': 'Accept-Encoding', 'x-slack-req-id': 'bba9b2c8239b51f60d240f9b2632f7ab', 'x-content-type-options': 'nosniff', 'x-xss-protection': '0', 'x-robots-tag': 'noindex,nofollow', 'pragma': 'no-cache', 'cache-control': 'private, no-cache, no-store, must-revalidate', 'expires': 'Sat, 26 Jul 1997 05:00:00 GMT', 'content-type': 'application/json; charset=utf-8', 'x-accepted-oauth-scopes': 'connections:write', 'x-oauth-scopes': 'connections:write,authorizations:read', 'access-control-expose-headers': 'x-slack-req-id, retry-after', 'access-control-allow-headers': 'slack-route, x-slack-version-ts, x-b3-traceid, x-b3-spanid, x-b3-parentspanid, x-b3-sampled, x-b3-flags', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'referrer-policy': 'no-referrer', 'x-slack-unique-id': 'aCLuRSZhb1gn4wkYMbuO9QAAwA0', 'x-slack-backend': 'r', 'access-control-allow-origin': '*', 'content-length': '173', 'via': '1.1 slack-prod.tinyspeck.com, envoy-www-iad-nqhfcjcr,envoy-edge-bom-plpzcife', 'x-envoy-attempt-count': '1', 'x-envoy-upstream-service-time': '236', 'x-backend': 'main_normal main_canary_with_overflow main_control_with_overflow', 'x-server': 'slack-www-hhvm-main-iad-uscg', 'x-slack-shared-secret-outcome': 'no-match', 'x-edge-backend': 'envoy-www', 'x-slack-edge-shared-secret-outcome': 'no-match', 'connection': 'close'}, body: {"ok":true,"url":"wss:\/\/wss-primary.slack.com\/link\/?ticket=e63232e1-87cf-401d-be8f-631067bc24fa&app_id=80ecbf266142da985b68b05f1ff313c100b9cdf30b305f7e8a16dce5f531ab94"}
+2025-05-13 10:01:26,483 - slack_bolt.App - INFO - [client.py:193] - A new session has been established (session id: 16ad5066-be9e-4b2d-a298-0413c7ce2602)
+2025-05-13 10:01:26,483 - slack_bolt.App - INFO - [base_handler.py:51] - ⚡️ Bolt app is running!
+2025-05-13 10:01:26,537 - slack_bolt.App - INFO - [client.py:266] - Starting to receive messages from a new connection (session id: 16ad5066-be9e-4b2d-a298-0413c7ce2602)
+2025-05-13 10:01:26,537 - slack_bolt.App - DEBUG - [client.py:236] - on_message invoked: (message: {"type":"hello","num_connections":2,"debug_info":{"host":"applink-12","build_number":117,"approximate_connection_time":18060},"connection_info":{"app_id":"A08SQGEHMSL"}})
+2025-05-13 10:01:26,537 - slack_bolt.App - DEBUG - [client.py:99] - A new message enqueued (current queue size: 1)
+2025-05-13 10:01:26,537 - slack_bolt.App - DEBUG - [client.py:105] - A message dequeued (current queue size: 0)
+2025-05-13 10:01:26,538 - slack_bolt.App - DEBUG - [client.py:125] - Message processing started (type: hello, envelope_id: None)
+2025-05-13 10:01:26,538 - slack_bolt.App - DEBUG - [client.py:150] - Message processing completed (type: hello, envelope_id: None)
