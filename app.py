@@ -80,6 +80,9 @@ class SearchResponse(BaseModel):
 class ChatQueryRequest(BaseModel):
     query: str
 
+MCP_SERVER_URL = os.getenv("MCP_SERVER_URL", "https://lokilens-1.onrender.com/mcp")
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+
 def parse_timestamp(timestamp_str: str) -> datetime:
     """Parse timestamp in various formats to datetime object."""
     logger.debug(f"Attempting to parse timestamp: {timestamp_str}")
