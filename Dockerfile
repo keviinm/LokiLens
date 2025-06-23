@@ -24,9 +24,8 @@ RUN pip install -e .
 # Create logs directory
 RUN mkdir -p /app/logs && chmod 777 /app/logs
 
-# Expose the ports the apps run on
+# Expose the port the app runs on
 EXPOSE 8000
-EXPOSE 9000
 
-# Command to run the application (commented out to allow Render to use startCommand)
-# CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000", "--reload", "--reload-dir", "/app/app.py", "--reload-dir", "/app/s3_operations.py", "--reload-dir", "/app/log_processor.py"] 
+# Command to run the main FastAPI application
+CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"] 

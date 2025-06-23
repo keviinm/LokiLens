@@ -11,6 +11,7 @@ from s3_operations import S3Operations
 from log_processor import LogProcessor
 from typing import List, Optional
 from pydantic import BaseModel
+from mcp_client import LogSearchClient
 
 # Configure logging with more detailed format
 logging.basicConfig(
@@ -51,6 +52,14 @@ s3_ops = S3Operations(
 # Initialize log processor
 log_processor = LogProcessor()
 
+# Initialize LogSearchClient for chat endpoint
+MCP_SERVER_URL = os.getenv("MCP_SERVER_URL", "https://lokilens-1.onrender.com/mcp")
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+logsearch_client = LogSearchClient(
+    mcp_server_url=MCP_SERVER_URL,
+    openai_api_key=OPENAI_API_KEY
+)
+
 # Pydantic models for request/response
 class SearchRequest(BaseModel):
     search_id: str
@@ -66,6 +75,9 @@ class SearchResponse(BaseModel):
     time_ranges: List[str]
     results: dict[str, List[LogEntry]]
     total_results: int
+
+class ChatQueryRequest(BaseModel):
+    query: str
 
 # Initialize MCP
 mcp = FastApiMCP(
@@ -233,6 +245,14 @@ async def search_logs(search_id: str, time_ranges: list) -> dict:
         "results": grouped_results,
         "total_results": len(all_results)
     }
+
+@app.post("/chat")
+async def chat_with_logs(request: ChatQueryRequest):
+    try:
+        response = logsearch_client.chat_with_logs(request.query)
+        return {"response": response}
+    except Exception as e:
+        return {"error": str(e)}
 
 # Mount the MCP server
 mcp.mount()
