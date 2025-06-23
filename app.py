@@ -72,7 +72,6 @@ mcp = FastApiMCP(
     app,
     name="LokiLens MCP",
     description="Model Context Protocol interface for LokiLens log search",
-    base_url="http://localhost:8000",
     describe_all_responses=True,
     describe_full_response_schema=True
 )
