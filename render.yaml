@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: lokilens
+    env: docker
+    plan: free  # Change to 'starter' or higher for production
+    dockerfilePath: Dockerfile
+    autoDeploy: true
+    envVars:
+      - key: AWS_ACCESS_KEY_ID
+        value: "<your-aws-access-key-id>"  # Set in Render dashboard or use secret
+      - key: AWS_SECRET_ACCESS_KEY
+        value: "<your-aws-secret-access-key>"
+      - key: AWS_SESSION_TOKEN
+        value: "<your-aws-session-token>"  # Optional
+      - key: BUCKET_NAME
+        value: "<your-bucket-name>"
+      - key: OPENAI_API_KEY
+        value: "<your-openai-api-key>"
+      - key: AWS_BUCKET_NAME
+        value: "<your-bucket-name>"  # For compatibility with app.py
+    
+    # Expose port 8000 (default for FastAPI/Uvicorn)
+    ports:
+      - 8000 
