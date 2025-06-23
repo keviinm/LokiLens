@@ -52,12 +52,13 @@ s3_ops = S3Operations(
 # Initialize log processor
 log_processor = LogProcessor()
 
-# Initialize LogSearchClient for chat endpoint
-MCP_SERVER_URL = os.getenv("MCP_SERVER_URL", "https://lokilens-1.onrender.com/mcp")
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-logsearch_client = LogSearchClient(
-    mcp_server_url=MCP_SERVER_URL,
-    openai_api_key=OPENAI_API_KEY
+# Initialize MCP
+mcp = FastApiMCP(
+    app,
+    name="LokiLens MCP",
+    description="Model Context Protocol interface for LokiLens log search",
+    describe_all_responses=True,
+    describe_full_response_schema=True
 )
 
 # Pydantic models for request/response
@@ -78,15 +79,6 @@ class SearchResponse(BaseModel):
 
 class ChatQueryRequest(BaseModel):
     query: str
-
-# Initialize MCP
-mcp = FastApiMCP(
-    app,
-    name="LokiLens MCP",
-    description="Model Context Protocol interface for LokiLens log search",
-    describe_all_responses=True,
-    describe_full_response_schema=True
-)
 
 def parse_timestamp(timestamp_str: str) -> datetime:
     """Parse timestamp in various formats to datetime object."""
@@ -249,6 +241,10 @@ async def search_logs(search_id: str, time_ranges: list) -> dict:
 @app.post("/chat")
 async def chat_with_logs(request: ChatQueryRequest):
     try:
+        logsearch_client = LogSearchClient(
+            mcp_server_url=MCP_SERVER_URL,
+            openai_api_key=OPENAI_API_KEY
+        )
         response = logsearch_client.chat_with_logs(request.query)
         return {"response": response}
     except Exception as e:
