@@ -3,37 +3,38 @@ services:
     name: lokilens
     env: docker
     plan: free  # Change to 'starter' or higher for production
-    dockerfilePath: Dockerfile
+    dockerfilePath: server/Dockerfile
+    buildCommand: ""
+    startCommand: ""
     autoDeploy: true
     envVars:
       - key: AWS_ACCESS_KEY_ID
-        value: "<your-aws-access-key-id>"  # Set in Render dashboard or use secret
+        sync: false
       - key: AWS_SECRET_ACCESS_KEY
-        value: "<your-aws-secret-access-key>"
+        sync: false
       - key: AWS_SESSION_TOKEN
-        value: "<your-aws-session-token>"  # Optional
+        sync: false
       - key: BUCKET_NAME
-        value: "<your-bucket-name>"
+        sync: false
       - key: OPENAI_API_KEY
-        value: "<your-openai-api-key>"
+        sync: false
       - key: AWS_BUCKET_NAME
-        value: "<your-bucket-name>"  # For compatibility with app.py
-    
-    # Expose port 8000 (default for FastAPI/Uvicorn)
+        sync: false
     ports:
-      - 8000 
+      - 8000
 
   - type: web
     name: mcp-client
     env: docker
     plan: free  # Change to 'starter' or higher for production
-    dockerfilePath: Dockerfile
-    autoDeploy: true
+    dockerfilePath: client/Dockerfile
+    buildCommand: ""
     startCommand: uvicorn mcp_client_api:app --host 0.0.0.0 --port 9000
+    autoDeploy: true
     envVars:
       - key: MCP_SERVER_URL
         value: "https://lokilens-1.onrender.com/mcp"
       - key: OPENAI_API_KEY
-        value: "<your-openai-api-key>"
+        sync: false
     ports:
       - 9000 

@@ -24,7 +24,7 @@ load_dotenv()
 class LogSearchClient:
     def __init__(
         self,
-        mcp_server_url: str = "http://localhost:8000/mcp",
+        mcp_server_url: str = "http://server:8000/mcp",
         openai_api_key: str = None,
         default_model: str = "gpt-4-turbo-preview",
         timeout: int = 5

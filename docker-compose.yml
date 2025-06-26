@@ -1,14 +1,30 @@
+version: '3.8'
 services:
-  lokilens:
-    build: 
-      context: .
+  server:
+    build:
+      context: ./server
       dockerfile: Dockerfile
     ports:
       - "8000:8000"
     environment:
       - OPENAI_API_KEY=${OPENAI_API_KEY}
-      - MCP_SERVER_URL=http://localhost:8000
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      - AWS_BUCKET_NAME=${AWS_BUCKET_NAME}
     volumes:
-      - ./logs:/app/logs
-      - .:/app
+      - ./server/logs:/app/logs
+      - ./server:/app
+    restart: unless-stopped
+
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    ports:
+      - "8001:8001"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - MCP_SERVER_URL=http://server:8000/mcp
+    depends_on:
+      - server
     restart: unless-stopped 

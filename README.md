@@ -1,45 +1,46 @@
-# S3 Log Search Tool
+# LokiLens Microservices Architecture
 
-A Python tool for searching and analyzing logs stored in AWS S3 buckets.
+LokiLens is now split into two microservices:
 
-## Features
+- **Server**: FastAPI backend for log search, S3 access, and web UI.
+- **Client**: FastAPI (or CLI) client for AI-driven log search/chat, communicating with the server via API.
 
-- Search logs across multiple timestamps
-- Group logs by container name
-- Handle gzipped log files
-- Secure credential management using environment variables
+## Directory Structure
 
-## Setup
+```
+/server   # Backend API, S3, log processing, web UI
+/client   # AI/LLM client, chat API
+```
 
-1. Install dependencies:
+## Running with Docker Compose
+
+1. Copy your `.env` file to the project root with AWS and OpenAI credentials.
+2. Build and start both services:
+
 ```bash
-pip install -r requirements.txt
+docker-compose up --build
 ```
 
-2. Create a `.env` file with your AWS credentials:
-```
-AWS_ACCESS_KEY_ID=your_access_key
-AWS_SECRET_ACCESS_KEY=your_secret_key
-AWS_SESSION_TOKEN=your_session_token  # Optional, for temporary credentials
-BUCKET_NAME=your_bucket_name
-```
+- Server: http://localhost:8000
+- Client: http://localhost:8001
 
-## Usage
+## Development
 
-Run the main script:
-```bash
-python main.py
-```
+- To run the server only:
+  ```bash
+  cd server
+  uvicorn app:app --reload --host 0.0.0.0 --port 8000
+  ```
+- To run the client only:
+  ```bash
+  cd client
+  uvicorn mcp_client_api:app --reload --host 0.0.0.0 --port 8001
+  ```
 
-The script will:
-1. Search for logs in the specified time range
-2. Process and group logs by container name
-3. Display matching logs with their container information
+## Environment Variables
+- `OPENAI_API_KEY`, `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `AWS_BUCKET_NAME` (server)
+- `OPENAI_API_KEY`, `MCP_SERVER_URL` (client)
 
-## Project Structure
-
-- `main.py`: Main script that orchestrates the log search process
-- `s3_operations.py`: Handles all S3-related operations
-- `log_processor.py`: Processes and analyzes log files
-- `.env`: Configuration file for AWS credentials
-- `requirements.txt`: Project dependencies
+## Notes
+- The client microservice communicates with the server via the internal Docker network using the service name `server`.
+- You can scale, deploy, or test each service independently.

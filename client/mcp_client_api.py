@@ -6,7 +6,7 @@ import os
 app = FastAPI()
 
 # Use environment variable for MCP server URL, fallback to deployed server
-MCP_SERVER_URL = os.getenv("MCP_SERVER_URL", "https://lokilens-1.onrender.com/mcp")
+MCP_SERVER_URL = os.getenv("MCP_SERVER_URL", "http://server:8000/mcp")
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
 client = LogSearchClient(
