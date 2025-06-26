@@ -20,8 +20,6 @@ services:
         sync: false
       - key: AWS_BUCKET_NAME
         sync: false
-    ports:
-      - 8000
 
   - type: web
     name: mcp-client
@@ -35,6 +33,4 @@ services:
       - key: MCP_SERVER_URL
         value: "https://lokilens-1.onrender.com/mcp"
       - key: OPENAI_API_KEY
-        sync: false
-    ports:
-      - 9000 
+        sync: false 
