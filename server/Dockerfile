@@ -12,4 +12,4 @@ COPY server/log_processor.py ./
 COPY server/templates ./templates
 COPY server/static ./static
 
-CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"] 
+CMD uvicorn app:app --host 0.0.0.0 --port $PORT 
